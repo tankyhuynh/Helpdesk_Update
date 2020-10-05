@@ -49,8 +49,8 @@ public class FileUtils {
 		
 		String imageDataBytes;
 		if (base64Image.contains(",")) {
+			System.out.println("Not constaint ',' !!!!!!! ");
 			imageDataBytes =base64Image.substring(base64Image.indexOf(",")+1);
-			System.out.println("Base64: " + base64Image);
 		}
 		else imageDataBytes = base64Image;
 		

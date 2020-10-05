@@ -52,7 +52,10 @@ public class FileUtils {
 			System.out.println("Not constaint ',' !!!!!!! ");
 			imageDataBytes =base64Image.substring(base64Image.indexOf(",")+1);
 		}
-		else imageDataBytes = base64Image;
+		else {
+			 imageDataBytes = base64Image;
+			 System.out.println("Constaint ',' !!!!!!! ");
+		}
 		
 			
 		try{

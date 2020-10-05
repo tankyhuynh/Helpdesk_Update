@@ -49,15 +49,15 @@ public class FileUtils {
 		
 		String imageDataBytes;
 		if (base64Image.contains(",")) {
-			 base64Image =base64Image.substring(base64Image.indexOf(",")+1);
+			imageDataBytes =base64Image.substring(base64Image.indexOf(",")+1);
 			System.out.println("Base64: " + base64Image);
 		}
-		
+		else imageDataBytes = base64Image;
 		
 			
 		try{
 			  
-		    byte[] imageByteArray = Base64.getDecoder().decode(base64Image);
+		    byte[] imageByteArray = Base64.getDecoder().decode(imageDataBytes);
 
 	        Map<String, String> map = cloudinary.uploader().upload(imageByteArray,
 	                    ObjectUtils.asMap("resource_type", "auto", "eager", Arrays.asList(

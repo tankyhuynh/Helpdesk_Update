@@ -49,12 +49,12 @@ public class FileUtils {
 		
 		String imageDataBytes;
 		if (base64Image.contains(",")) {
-			System.out.println("Not constaint ',' !!!!!!! ");
+			System.out.println("Constains ',' !!!!!!! ");
 			imageDataBytes =base64Image.substring(base64Image.indexOf(",")+1);
 		}
 		else {
 			 imageDataBytes = base64Image;
-			 System.out.println("Constaint ',' !!!!!!! ");
+			 System.out.println("Not constains ',' !!!!!!! ");
 		}
 		
 			

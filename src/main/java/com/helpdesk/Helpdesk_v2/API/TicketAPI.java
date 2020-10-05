@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.helpdesk.Helpdesk_v2.Constant.MailConstant;
+import com.helpdesk.Helpdesk_v2.Constant.TicketConstant;
 import com.helpdesk.Helpdesk_v2.Entity.LogEntity;
 import com.helpdesk.Helpdesk_v2.Entity.StatusEntity;
 import com.helpdesk.Helpdesk_v2.Entity.TicketEntity;
@@ -50,6 +51,9 @@ public class TicketAPI {
 	
 	@Autowired
 	private MailConstant mailConstant;
+	
+	@Autowired
+	private TicketConstant ticketConstant;
 	
 	@Autowired
 	private LogService logService;
@@ -106,7 +110,7 @@ public class TicketAPI {
 		mailAPI.sendUser_addTicket(ticketEntity.getUserId(), ticketEntity, mailConstant.mail_title_add_ticket_user, mailConstant.mail_body_add_ticket_user, mailConstant.mail_footer_add_ticket_user);
 		mailAPI.sendUser_addTicket("5f6ff6a57cbfb744d95344c8", ticketEntity, mailConstant.mail_title_add_ticket_user, mailConstant.mail_body_add_ticket_admin, mailConstant.mail_footer_add_ticket_admin);
 		
-		LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + " đã thêm mới " +  ticketEntity.getId() + " vào", "https://img.icons8.com/ios-filled/64/000000/information.png");
+		LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + ticketConstant.add_status +  ticketEntity.getId() + " vào", "https://img.icons8.com/ios-filled/64/000000/information.png");
 		logService.save(logEntity);
 		
 		return ResponseEntity.ok(ticketService.save(ticketEntity));
@@ -127,18 +131,15 @@ public class TicketAPI {
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}
 
-				System.out.println("Khac null");
-				System.out.println("Push Git");
-				
 				mailAPI.sendUser_statusChange(ticketEntity.getUserId(), ticketEntity);
 				mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				
 			}
 			
-			LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + " đã cập nhât " +  ticketEntity.getId() + " vào", "https://img.icons8.com/ios-filled/64/000000/information.png");
+			LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + ticketConstant.update_status +  ticketEntity.getId() + " vào", "https://img.icons8.com/ios-filled/64/000000/information.png");
 			logService.save(logEntity);
 
-			return ResponseEntity.ok(ticketService.saveAndFlush(ticketEntity));
+			return ResponseEntity.status(HttpStatus.OK).body(ticketService.saveAndFlush(ticketEntity));
 		}
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
@@ -147,7 +148,7 @@ public class TicketAPI {
 	public void deleteById(@PathVariable String id) throws Exception {
 		TicketEntity ticketEntity = ticketService.findOne(id);
 		
-		LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + " đã xoá " +  ticketEntity.getId() + " vào ", "https://img.icons8.com/ios-filled/64/000000/information.png");
+		LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + ticketConstant.delete_status +  ticketEntity.getId() + " vào ", "https://img.icons8.com/ios-filled/64/000000/information.png");
 		logService.save(logEntity);
 		
 		mailAPI.sendAdmin_dropTicket(ticketEntity);

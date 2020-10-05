@@ -1,0 +1,285 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007eff81692401, pid=4797, tid=5176
+#
+# JRE version: OpenJDK Runtime Environment (11.0.6+10) (build 11.0.6+10-post-Ubuntu-1ubuntu118.04.1)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.6+10-post-Ubuntu-1ubuntu118.04.1, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x2401]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/lib/systemd/systemd-coredump %P %u %g %s %t 9223372036854775808 %e" (or dumping to /home/tanky/Documents/Springboot Project/Helpdesk_v2/core.4797)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:44865 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=42191 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Djava.security.egd=file:/dev/./urandom -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=Helpdesk_v2 -javaagent:/home/tanky/Desktop/eclipse/jee-2019-123/eclipse/configuration/org.eclipse.osgi/1402/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 com.helpdesk.Helpdesk_v2.HelpdeskV2Application
+
+Host: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz, 8 cores, 3G, Linux Mint 19.3 Tricia
+Time: Thu Oct  1 08:42:29 2020 +07 elapsed time: 359 seconds (0d 0h 5m 59s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007eff14007800):  JavaThread "RMI TCP Connection(16)-127.0.0.1" daemon [_thread_in_vm, id=5176, stack(0x00007eff4eb94000,0x00007eff4ec95000)]
+
+Stack: [0x00007eff4eb94000,0x00007eff4ec95000],  sp=0x00007eff4ec8cee0,  free space=995k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x2401]
+C  [libjimage.so+0x30ea]
+C  [libjimage.so+0x35c6]  JIMAGE_FindResource+0xd6
+V  [libjvm.so+0x59098e]
+V  [libjvm.so+0x5936f0]
+V  [libjvm.so+0xd49c05]
+V  [libjvm.so+0xd4759a]
+V  [libjvm.so+0xd4a192]
+V  [libjvm.so+0x644c4d]
+V  [libjvm.so+0x839b0c]
+j  java.net.URI$Parser.fail(Ljava/lang/String;I)V+0 java.base@11.0.6
+j  java.net.URI$Parser.parseHostname(II)I+136 java.base@11.0.6
+j  java.net.URI$Parser.parseServer(II)I+239 java.base@11.0.6
+j  java.net.URI$Parser.parseAuthority(II)I+128 java.base@11.0.6
+j  java.net.URI$Parser.parseHierarchical(II)I+49 java.base@11.0.6
+J 3868 c1 java.net.URI$Parser.parse(Z)V java.base@11.0.6 (243 bytes) @ 0x00007eff6570eb34 [0x00007eff6570e780+0x00000000000003b4]
+j  java.net.URI.<init>(Ljava/lang/String;)V+19 java.base@11.0.6
+j  java.net.SocksSocketImpl.connect(Ljava/net/SocketAddress;I)V+258 java.base@11.0.6
+j  java.net.Socket.connect(Ljava/net/SocketAddress;I)V+179 java.base@11.0.6
+j  org.apache.tomcat.util.net.AbstractEndpoint.unlockAccept()V+235
+j  org.apache.tomcat.util.net.AbstractEndpoint.pause()V+24
+j  org.apache.coyote.AbstractProtocol.pause()V+49
+j  org.apache.catalina.connector.Connector.pause()V+11
+j  org.apache.catalina.core.StandardService.stopInternal()V+32
+j  org.apache.catalina.util.LifecycleBase.stop()V+214
+j  org.apache.catalina.core.StandardServer.stopInternal()V+83
+j  org.apache.catalina.util.LifecycleBase.stop()V+214
+j  org.apache.catalina.startup.Tomcat.stop()V+9
+j  org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stopTomcat()V+29
+j  org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop()V+32
+j  org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop()V+4
+j  org.springframework.context.SmartLifecycle.stop(Ljava/lang/Runnable;)V+1
+j  org.springframework.context.support.DefaultLifecycleProcessor.doStop(Ljava/util/Map;Ljava/lang/String;Ljava/util/concurrent/CountDownLatch;Ljava/util/Set;)V+176
+j  org.springframework.context.support.DefaultLifecycleProcessor.access$300(Lorg/springframework/context/support/DefaultLifecycleProcessor;Ljava/util/Map;Ljava/lang/String;Ljava/util/concurrent/CountDownLatch;Ljava/util/Set;)V+6
+j  org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop()V+176
+j  org.springframework.context.support.DefaultLifecycleProcessor.stopBeans()V+100
+j  org.springframework.context.support.DefaultLifecycleProcessor.onClose()V+1
+j  org.springframework.context.support.AbstractApplicationContext.doClose()V+107
+j  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose()V+15
+j  org.springframework.context.support.AbstractApplicationContext.close()V+8
+j  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown()V+17
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x8493b9]
+V  [libjvm.so+0xc6fcb6]
+V  [libjvm.so+0xc70cc2]
+V  [libjvm.so+0x8fadbc]  JVM_InvokeMethod+0xfc
+J 2824  jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; java.base@11.0.6 (0 bytes) @ 0x00007eff65507340 [0x00007eff65507240+0x0000000000000100]
+j  jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100 java.base@11.0.6
+j  jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6 java.base@11.0.6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+59 java.base@11.0.6
+j  sun.reflect.misc.Trampoline.invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  jdk.internal.reflect.GeneratedMethodAccessor51.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+40
+j  jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6 java.base@11.0.6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+59 java.base@11.0.6
+j  sun.reflect.misc.MethodUtil.invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+20 java.base@11.0.6
+j  com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+42 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Lcom/sun/jmx/mbeanserver/MXBeanLookup;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Lcom/sun/jmx/mbeanserver/ConvertingMethod;Ljava/lang/Object;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+8 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+9 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.PerInterface.invoke(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+202 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.MBeanSupport.invoke(Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object;+15 java.management@11.0.6
+j  com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(Ljavax/management/ObjectName;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object;+28 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(Ljavax/management/ObjectName;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object;+13 java.management@11.0.6
+j  javax.management.remote.rmi.RMIConnectionImpl.doOperation(I[Ljava/lang/Object;)Ljava/lang/Object;+370 java.management.rmi@11.0.6
+j  javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run()Ljava/lang/Object;+12 java.management.rmi@11.0.6
+j  javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(I[Ljava/lang/Object;Ljavax/security/auth/Subject;)Ljava/lang/Object;+79 java.management.rmi@11.0.6
+j  javax.management.remote.rmi.RMIConnectionImpl.invoke(Ljavax/management/ObjectName;Ljava/lang/String;Ljava/rmi/MarshalledObject;[Ljava/lang/String;Ljavax/security/auth/Subject;)Ljava/lang/Object;+131 java.management.rmi@11.0.6
+j  jdk.internal.reflect.GeneratedMethodAccessor53.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+72 java.base@11.0.6
+j  jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6 java.base@11.0.6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+59 java.base@11.0.6
+j  sun.rmi.server.UnicastServerRef.dispatch(Ljava/rmi/Remote;Ljava/rmi/server/RemoteCall;)V+264 java.rmi@11.0.6
+j  sun.rmi.transport.Transport$1.run()Ljava/lang/Void;+23 java.rmi@11.0.6
+j  sun.rmi.transport.Transport$1.run()Ljava/lang/Object;+1 java.rmi@11.0.6
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x8493b9]
+V  [libjvm.so+0x8fe53f]  JVM_DoPrivileged+0x61f
+J 5807  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; java.base@11.0.6 (0 bytes) @ 0x00007eff65aa6ca8 [0x00007eff65aa6bc0+0x00000000000000e8]
+j  sun.rmi.transport.Transport.serviceCall(Ljava/rmi/server/RemoteCall;)Z+157 java.rmi@11.0.6
+j  sun.rmi.transport.tcp.TCPTransport.handleMessages(Lsun/rmi/transport/Connection;Z)V+145 java.rmi@11.0.6
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0()V+490 java.rmi@11.0.6
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0()Ljava/lang/Void;+1 java.rmi@11.0.6
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$91.run()Ljava/lang/Object;+4 java.rmi@11.0.6
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x8493b9]
+V  [libjvm.so+0x8fe53f]  JVM_DoPrivileged+0x61f
+J 5834  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; java.base@11.0.6 (0 bytes) @ 0x00007eff65ab2a28 [0x00007eff65ab2940+0x00000000000000e8]
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run()V+37 java.rmi@11.0.6
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+92 java.base@11.0.6
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5 java.base@11.0.6
+j  java.lang.Thread.run()V+11 java.base@11.0.6
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x8493b9]
+V  [libjvm.so+0x8474fd]
+V  [libjvm.so+0x8f20dc]
+V  [libjvm.so+0xd83203]
+V  [libjvm.so+0xd834d5]
+V  [libjvm.so+0xd7f20a]
+V  [libjvm.so+0xbcf1fe]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.net.URI$Parser.fail(Ljava/lang/String;I)V+0 java.base@11.0.6
+j  java.net.URI$Parser.parseHostname(II)I+136 java.base@11.0.6
+j  java.net.URI$Parser.parseServer(II)I+239 java.base@11.0.6
+j  java.net.URI$Parser.parseAuthority(II)I+128 java.base@11.0.6
+j  java.net.URI$Parser.parseHierarchical(II)I+49 java.base@11.0.6
+J 3868 c1 java.net.URI$Parser.parse(Z)V java.base@11.0.6 (243 bytes) @ 0x00007eff6570eb34 [0x00007eff6570e780+0x00000000000003b4]
+j  java.net.URI.<init>(Ljava/lang/String;)V+19 java.base@11.0.6
+j  java.net.SocksSocketImpl.connect(Ljava/net/SocketAddress;I)V+258 java.base@11.0.6
+j  java.net.Socket.connect(Ljava/net/SocketAddress;I)V+179 java.base@11.0.6
+j  org.apache.tomcat.util.net.AbstractEndpoint.unlockAccept()V+235
+j  org.apache.tomcat.util.net.AbstractEndpoint.pause()V+24
+j  org.apache.coyote.AbstractProtocol.pause()V+49
+j  org.apache.catalina.connector.Connector.pause()V+11
+j  org.apache.catalina.core.StandardService.stopInternal()V+32
+j  org.apache.catalina.util.LifecycleBase.stop()V+214
+j  org.apache.catalina.core.StandardServer.stopInternal()V+83
+j  org.apache.catalina.util.LifecycleBase.stop()V+214
+j  org.apache.catalina.startup.Tomcat.stop()V+9
+j  org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stopTomcat()V+29
+j  org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop()V+32
+j  org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop()V+4
+j  org.springframework.context.SmartLifecycle.stop(Ljava/lang/Runnable;)V+1
+j  org.springframework.context.support.DefaultLifecycleProcessor.doStop(Ljava/util/Map;Ljava/lang/String;Ljava/util/concurrent/CountDownLatch;Ljava/util/Set;)V+176
+j  org.springframework.context.support.DefaultLifecycleProcessor.access$300(Lorg/springframework/context/support/DefaultLifecycleProcessor;Ljava/util/Map;Ljava/lang/String;Ljava/util/concurrent/CountDownLatch;Ljava/util/Set;)V+6
+j  org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop()V+176
+j  org.springframework.context.support.DefaultLifecycleProcessor.stopBeans()V+100
+j  org.springframework.context.support.DefaultLifecycleProcessor.onClose()V+1
+j  org.springframework.context.support.AbstractApplicationContext.doClose()V+107
+j  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose()V+15
+j  org.springframework.context.support.AbstractApplicationContext.close()V+8
+j  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown()V+17
+v  ~StubRoutines::call_stub
+J 2824  jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; java.base@11.0.6 (0 bytes) @ 0x00007eff655072c7 [0x00007eff65507240+0x0000000000000087]
+j  jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100 java.base@11.0.6
+j  jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6 java.base@11.0.6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+59 java.base@11.0.6
+j  sun.reflect.misc.Trampoline.invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+7
+j  jdk.internal.reflect.GeneratedMethodAccessor51.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+40
+j  jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6 java.base@11.0.6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+59 java.base@11.0.6
+j  sun.reflect.misc.MethodUtil.invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+20 java.base@11.0.6
+j  com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+42 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(Lcom/sun/jmx/mbeanserver/MXBeanLookup;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Lcom/sun/jmx/mbeanserver/ConvertingMethod;Ljava/lang/Object;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+8 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+9 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.PerInterface.invoke(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;+202 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.MBeanSupport.invoke(Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object;+15 java.management@11.0.6
+j  com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(Ljavax/management/ObjectName;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object;+28 java.management@11.0.6
+j  com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(Ljavax/management/ObjectName;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object;+13 java.management@11.0.6
+j  javax.management.remote.rmi.RMIConnectionImpl.doOperation(I[Ljava/lang/Object;)Ljava/lang/Object;+370 java.management.rmi@11.0.6
+j  javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run()Ljava/lang/Object;+12 java.management.rmi@11.0.6
+j  javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(I[Ljava/lang/Object;Ljavax/security/auth/Subject;)Ljava/lang/Object;+79 java.management.rmi@11.0.6
+j  javax.management.remote.rmi.RMIConnectionImpl.invoke(Ljavax/management/ObjectName;Ljava/lang/String;Ljava/rmi/MarshalledObject;[Ljava/lang/String;Ljavax/security/auth/Subject;)Ljava/lang/Object;+131 java.management.rmi@11.0.6
+j  jdk.internal.reflect.GeneratedMethodAccessor53.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+72 java.base@11.0.6
+j  jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6 java.base@11.0.6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+59 java.base@11.0.6
+j  sun.rmi.server.UnicastServerRef.dispatch(Ljava/rmi/Remote;Ljava/rmi/server/RemoteCall;)V+264 java.rmi@11.0.6
+j  sun.rmi.transport.Transport$1.run()Ljava/lang/Void;+23 java.rmi@11.0.6
+j  sun.rmi.transport.Transport$1.run()Ljava/lang/Object;+1 java.rmi@11.0.6
+v  ~StubRoutines::call_stub
+J 5807  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; java.base@11.0.6 (0 bytes) @ 0x00007eff65aa6c33 [0x00007eff65aa6bc0+0x0000000000000073]
+j  sun.rmi.transport.Transport.serviceCall(Ljava/rmi/server/RemoteCall;)Z+157 java.rmi@11.0.6
+j  sun.rmi.transport.tcp.TCPTransport.handleMessages(Lsun/rmi/transport/Connection;Z)V+145 java.rmi@11.0.6
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0()V+490 java.rmi@11.0.6
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0()Ljava/lang/Void;+1 java.rmi@11.0.6
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$91.run()Ljava/lang/Object;+4 java.rmi@11.0.6
+v  ~StubRoutines::call_stub
+J 5834  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; java.base@11.0.6 (0 bytes) @ 0x00007eff65ab29b3 [0x00007eff65ab2940+0x0000000000000073]
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run()V+37 java.rmi@11.0.6
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+92 java.base@11.0.6
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5 java.base@11.0.6
+j  java.lang.Thread.run()V+11 java.base@11.0.6
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007eff73923b0c
+
+Register to memory mapping:
+
+RAX=0x0000000000004ebc is an unknown value
+RBX=0x00007eff4ec8cf91 is pointing into the stack for thread: 0x00007eff14007800
+RCX=0x00007eff7391001c is an unknown value
+RDX=0x0000000000004ebc is an unknown value
+RSP=0x00007eff4ec8cee0 is pointing into the stack for thread: 0x00007eff14007800
+RBP=0x00007eff4ec8cf00 is pointing into the stack for thread: 0x00007eff14007800
+RSI=0x00007eff4ec8cf90 is pointing into the stack for thread: 0x00007eff14007800
+RDI=0x00007eff81895130: <offset 0x0000000000205130> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007eff81690000
+R8 =0x0 is NULL
+R9 =0x00000000841ed9ef is an unknown value
+R10=0x00007eff4ec8cfb4 is pointing into the stack for thread: 0x00007eff14007800
+R11=0x00007eff852bc4c0: <offset 0x00000000001af4c0> in /lib/x86_64-linux-gnu/libc.so.6 at 0x00007eff8510d000
+R12=0x00007eff4ec8cf90 is pointing into the stack for thread: 0x00007eff14007800
+R13=0x00000000000083a0 is an unknown value
+R14=0x00007eff4ec8e028 is pointing into the stack for thread: 0x00007eff14007800
+R15=0x00007eff3808fbf0 points into unknown readable memory: 6a 61 76 61 2f 6e 65 74
+
+
+Registers:
+RAX=0x0000000000004ebc, RBX=0x00007eff4ec8cf91, RCX=0x00007eff7391001c, RDX=0x0000000000004ebc
+RSP=0x00007eff4ec8cee0, RBP=0x00007eff4ec8cf00, RSI=0x00007eff4ec8cf90, RDI=0x00007eff81895130
+R8 =0x0000000000000000, R9 =0x00000000841ed9ef, R10=0x00007eff4ec8cfb4, R11=0x00007eff852bc4c0
+R12=0x00007eff4ec8cf90, R13=0x00000000000083a0, R14=0x00007eff4ec8e028, R15=0x00007eff3808fbf0
+RIP=0x00007eff81692401, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007eff4ec8cee0)
+0x00007eff4ec8cee0:   00007eff4ec8d070 00007eff7c025da0
+0x00007eff4ec8cef0:   0000000000000000 00007eff4ec8cf90
+0x00007eff4ec8cf00:   00007eff4ec8cf70 00007eff816930ea
+0x00007eff4ec8cf10:   00007eff14007800 0000000000000001 
+
+Instructions: (pc=0x00007eff81692401)
+0x00007eff81692301:   c5 4c 01 e3 48 89 ce e8 d3 f3 ff ff e9 69 fd ff
+0x00007eff81692311:   ff 89 d1 0f b7 74 08 fe 66 41 89 74 0e fe e9 7a
+0x00007eff81692321:   fe ff ff 0f 1f 40 00 8b 08 49 8d 1c 16 41 89 0e
+0x00007eff81692331:   89 d1 8b 74 08 fc 41 89 74 0e fc 48 8d 34 10 48
+0x00007eff81692341:   89 75 b8 e9 0b fe ff ff 0f 1f 80 00 00 00 00 0f
+0x00007eff81692351:   b6 17 55 89 f0 48 89 e5 84 d2 74 22 48 8d 4f 01
+0x00007eff81692361:   0f 1f 80 00 00 00 00 48 83 c1 01 0f b6 f2 0f b6
+0x00007eff81692371:   51 ff 69 c0 93 01 00 01 31 f0 84 d2 75 e9 25 ff
+0x00007eff81692381:   ff ff 7f 5d c3 66 2e 0f 1f 84 00 00 00 00 00 48
+0x00007eff81692391:   85 d2 0f 84 dd 00 00 00 85 c9 0f 84 d5 00 00 00
+0x00007eff816923a1:   55 48 89 e5 41 55 41 54 53 48 8d 5e 01 48 83 ec
+0x00007eff816923b1:   08 44 0f b6 06 45 84 c0 0f 84 a9 00 00 00 49 89
+0x00007eff816923c1:   da b8 93 01 00 01 66 0f 1f 84 00 00 00 00 00 49
+0x00007eff816923d1:   83 c2 01 44 69 c8 93 01 00 01 41 0f b6 c0 45 0f
+0x00007eff816923e1:   b6 42 ff 44 31 c8 45 84 c0 75 e4 25 ff ff ff 7f
+0x00007eff816923f1:   41 89 cd 48 89 d1 31 d2 41 f7 f5 49 89 f4 89 d0
+0x00007eff81692401:   8b 34 81 48 8b 07 ff 50 20 83 f8 00 7e 41 41 0f
+0x00007eff81692411:   b6 14 24 84 d2 74 1c 0f 1f 84 00 00 00 00 00 69
+0x00007eff81692421:   c0 93 01 00 01 48 83 c3 01 31 d0 0f b6 53 ff 84
+0x00007eff81692431:   d2 75 ec 25 ff ff ff 7f 31 d2 41 f7 f5 48 83 c4
+0x00007eff81692441:   08 89 d0 5b 41 5c 41 5d 5d c3 0f 1f 44 00 00 74
+0x00007eff81692451:   1d f7 d0 48 83 c4 08 89 c2 5b 89 d0 41 5c 41 5d
+0x00007eff81692461:   5d c3 0f 1f 44 00 00 b8 93 01 00 01 eb 82 ba ff
+0x00007eff81692471:   ff ff ff eb c8 83 ca ff 89 d0 c3 0f 1f 40 00 0f
+0x00007eff81692481:   b6 17 55 48 89 f8 48 89 e5 84 d2 75 15 eb 1a 38
+0x00007eff81692491:   ca 75 1c 48 83 c0 01 0f b6 10 48 83 c6 01 84 d2
+0x00007eff816924a1:   74 07 0f b6 0e 84 c9 75 e6 5d c3 0f 1f 40 00 31
+0x00007eff816924b1:   c0 5d c3 66 90 66 2e 0f 1f 84 00 00 00 00 00 55
+0x00007eff816924c1:   48 85 f6 48 89 e5 74 57 0f 1f 80 00 00 00 00 0f
+0x00007eff816924d1:   b6 06 84 c0 74 49 0f b6 d0 83 e0 07 c1 fa 03 44
+0x00007eff816924e1:   8d 50 01 0f b6 c0 41 89 d1 48 8d 56 01 4c 8d 44
+0x00007eff816924f1:   06 02 31 c0 0f 1f 00 0f b6 0a 48 c1 e0 08 48 83 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x00007eff4ec8d070 is pointing into the stack for thread: 0x00007eff14007800
+stack at sp + 1 slots: 0x00007eff7c025da0 points into unknown readable memory: 60 47 01 24 ff 7e 00 00
+stack at sp + 2 slots: 0x0 is NULL
+stack at sp + 3 slots: 0x00007eff4ec8cf90 is pointing into the stack for thread: 0x00007eff14007800
+stack at sp + 4 slots: 0x00007eff4ec8cf70 is pointing into the stack for thread: 0x00007eff14007800
+stack at sp + 5 slots: 0x00007eff816930ea: <offset 0x00000000000030ea> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007eff81690000
+stack at sp + 6 slots: 0x00007eff14007800 is a thread
+stack at sp + 7 slots: 

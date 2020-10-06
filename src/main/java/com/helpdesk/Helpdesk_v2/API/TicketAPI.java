@@ -148,6 +148,7 @@ public class TicketAPI {
 	public void deleteById(@PathVariable String id, @RequestBody(required = false) TicketEntity ticketEntity) throws Exception {
 //		TicketEntity ticketEntity = ticketService.findOne(id);
 		
+		System.out.println("ModifiedBy: " + ticketEntity.getModifiedBy());
 		LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + ticketConstant.delete_status +  ticketEntity.getId() + " vào ", "https://img.icons8.com/ios-filled/64/000000/information.png");
 		logService.save(logEntity);
 		

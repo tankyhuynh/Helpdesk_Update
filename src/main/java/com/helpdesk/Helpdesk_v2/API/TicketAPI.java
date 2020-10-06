@@ -145,7 +145,7 @@ public class TicketAPI {
 	}
 
 	@DeleteMapping("/{id}")
-	public void deleteById(@PathVariable String id, @RequestBody(required = false) TicketEntity ticketEntity) throws Exception {
+	public ResponseEntity<String> deleteById(@PathVariable String id, @RequestBody TicketEntity ticketEntity) throws Exception {
 //		TicketEntity ticketEntity = ticketService.findOne(id);
 		
 		System.err.println("Hello");
@@ -154,8 +154,8 @@ public class TicketAPI {
 		logService.save(logEntity);
 		
 		mailAPI.sendAdmin_dropTicket(ticketEntity);
-		
 		ticketService.delete(ticketEntity.getId());
+		return ResponseEntity.ok("OK");
 		
 		
 	}

@@ -144,18 +144,18 @@ public class TicketAPI {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 
-	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteById(@PathVariable String id, @RequestBody TicketEntity ticketEntity) throws Exception {
-//		TicketEntity ticketEntity = ticketService.findOne(id);
+	@DeleteMapping("/{id}/{modifiedBy}")
+	public void deleteById(@PathVariable("id") String id, @PathVariable("modifiedBy") String modifiedBy) throws Exception {
+		TicketEntity ticketEntity = ticketService.findOne(id);
 		
 		System.err.println("Hello");
 		System.out.println("ModifiedBy: " + ticketEntity.getModifiedBy());
-		LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + ticketConstant.delete_status +  ticketEntity.getId() + " vào ", "https://img.icons8.com/ios-filled/64/000000/information.png");
+		LogEntity logEntity = new LogEntity(userService.findOne(modifiedBy).getFullName() + ticketConstant.delete_status +  ticketEntity.getId() + " vào ", "https://img.icons8.com/ios-filled/64/000000/information.png");
 		logService.save(logEntity);
 		
 		mailAPI.sendAdmin_dropTicket(ticketEntity);
 		ticketService.delete(ticketEntity.getId());
-		return ResponseEntity.ok("OK");
+
 		
 		
 	}

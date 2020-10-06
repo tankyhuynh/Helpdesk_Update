@@ -110,7 +110,7 @@ public class TicketAPI {
 		mailAPI.sendUser_addTicket(ticketEntity.getUserId(), ticketEntity, mailConstant.mail_title_add_ticket_user, mailConstant.mail_body_add_ticket_user, mailConstant.mail_footer_add_ticket_user);
 		mailAPI.sendUser_addTicket("5f6ff6a57cbfb744d95344c8", ticketEntity, mailConstant.mail_title_add_ticket_user, mailConstant.mail_body_add_ticket_admin, mailConstant.mail_footer_add_ticket_admin);
 		
-		LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + ticketConstant.add_status +  ticketEntity.getId() + " vào", "https://img.icons8.com/ios-filled/64/000000/information.png");
+		LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getUserId()).getFullName() + ticketConstant.add_status +  ticketEntity.getId() + " vào", "https://img.icons8.com/ios-filled/64/000000/information.png");
 		logService.save(logEntity);
 		
 		return ResponseEntity.ok(ticketService.save(ticketEntity));

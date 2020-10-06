@@ -47,7 +47,7 @@ public class AuthAPI {
 		List<String> messages = (List<String>) request.getSession().getAttribute("USER_SESSION");
 		
 		if (userSerice.findOneByUsernameAndPassword(loginRequest.getUsername(), loginRequest.getPassword()) != null) {
-			
+
 				if (messages == null) {
 					messages = new ArrayList<>();
 					request.getSession().setAttribute("USER_SESSION", messages);

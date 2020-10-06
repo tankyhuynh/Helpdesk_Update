@@ -153,7 +153,7 @@ public class TicketAPI {
 		
 		mailAPI.sendAdmin_dropTicket(ticketEntity);
 		
-		ticketService.delete(id);
+		ticketService.delete(ticketEntity.getId());
 		
 		
 	}

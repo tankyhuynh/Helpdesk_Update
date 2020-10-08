@@ -93,12 +93,12 @@ public class AbstractPDF {
 										 
 									}
 							        
-							        else if (String.valueOf(field.get(ticket)).isBlank()) {
-										 System.out.println(field.get(ticket).toString() + " is Blanks");
-										 idCell = new PdfPCell(new Phrase("List"));
-										 System.out.println("\tField value: "+ field.get(ticket));
-										 
-									}
+//							        else if (String.valueOf(field.get(ticket)).isBlank()) {
+//										 System.out.println(field.get(ticket).toString() + " is Blanks");
+//										 idCell = new PdfPCell(new Phrase("List"));
+//										 System.out.println("\tField value: "+ field.get(ticket));
+//										 
+//									}
 							        
 							        else if (String.valueOf(field.get(ticket)).isEmpty()) {
 										 System.out.println(field.get(ticket).toString() + " is isEmpty");

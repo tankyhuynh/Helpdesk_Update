@@ -2,8 +2,9 @@ package com.helpdesk.Helpdesk_v2.Utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.stereotype.Component;
@@ -21,11 +22,10 @@ import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.pdf.AcroFields.Item;
-import com.itextpdf.text.pdf.PdfEncodings;
 
 /**
 * @author root {4:49:19 PM}:
@@ -40,6 +40,9 @@ import com.itextpdf.text.pdf.PdfEncodings;
 @Component
 public class PDFUtils<T> {
 
+//	public static File fontFile = new File("/home/tanky/Downloads/VietFontsWeb1_ttf/vuArial.ttf");
+	public static File fontFile = new File("/vuArial.ttf");
+	
 	public static <T> ByteArrayInputStream customerPDFReport(String[] fieldName, List<TicketEntity> ticketEntity) throws Exception {
 		Document document = new Document();
 		document.setPageSize(PageSize.A2);
@@ -49,9 +52,10 @@ public class PDFUtils<T> {
 
 			PdfWriter.getInstance(document, out);
 			document.open();
-
+			
 			// Add Text to PDF file ->
-			Font font = FontFactory.getFont(FontFactory.defaultEncoding, 14, BaseColor.BLACK);
+			BaseFont bf = BaseFont.createFont(fontFile.getAbsolutePath(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+	        Font font = new Font(bf,15);
 			Paragraph para = new Paragraph("Customer Table", font);
 			para.setAlignment(Element.ALIGN_CENTER);
 			document.add(para);
@@ -81,7 +85,7 @@ public class PDFUtils<T> {
 				idCell.setBorderWidth(2);
 				table.addCell(idCell);
 				
-				PdfPCell titleCell = new PdfPCell(new Phrase(ticket.getTitle()));
+				PdfPCell titleCell = new PdfPCell(new Phrase(ticket.getTitle(), font));
 				titleCell.setPaddingLeft(6);
 				titleCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				titleCell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -104,14 +108,14 @@ public class PDFUtils<T> {
 
 				
 				
-				PdfPCell descriptionCell = new PdfPCell(new Phrase(String.valueOf(ticket.getDescription())));
+				PdfPCell descriptionCell = new PdfPCell(new Phrase(String.valueOf(ticket.getDescription()), font));
 				descriptionCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				descriptionCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				descriptionCell.setBorderWidth(2);
 				descriptionCell.setPaddingRight(6);
 				table.addCell(descriptionCell);
 				
-				PdfPCell placeCell = new PdfPCell(new Phrase(String.valueOf(ticket.getPlace())));
+				PdfPCell placeCell = new PdfPCell(new Phrase(String.valueOf(ticket.getPlace()), font));
 				placeCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				placeCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				placeCell.setBorderWidth(2);
@@ -120,7 +124,7 @@ public class PDFUtils<T> {
 				
 				
 				
-				PdfPCell fullNameCell = new PdfPCell(new Phrase(String.valueOf(ticket.getFullName())));
+				PdfPCell fullNameCell = new PdfPCell(new Phrase(String.valueOf(ticket.getFullName()), font));
 				fullNameCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				fullNameCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				fullNameCell.setBorderWidth(2);
@@ -129,7 +133,7 @@ public class PDFUtils<T> {
 				
 				String status = "";
 				for (StatusEntity item : ticket.getStatus()) {
-					status += item.getName() + "\n";
+					status += item.getName() + " " + (new SimpleDateFormat("dd-MM-yyyy").format(item.getTime())) + "\n\n";
 				}
 				
 				PdfPCell statusCell = new PdfPCell(new Phrase(String.valueOf( status )));
@@ -140,7 +144,7 @@ public class PDFUtils<T> {
 				table.addCell(statusCell);
 
 				
-				PdfPCell technicianNameCell = new PdfPCell(new Phrase(String.valueOf(ticket.getTechnicianName())));
+				PdfPCell technicianNameCell = new PdfPCell(new Phrase(String.valueOf(ticket.getTechnicianName()), font));
 				technicianNameCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				technicianNameCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				technicianNameCell.setBorderWidth(2);
@@ -148,7 +152,7 @@ public class PDFUtils<T> {
 				table.addCell(technicianNameCell);
 				
 				
-				PdfPCell modifiedCell = new PdfPCell(new Phrase(String.valueOf(ticket.getModifiedBy())));
+				PdfPCell modifiedCell = new PdfPCell(new Phrase(String.valueOf(ticket.getModifiedBy()), font));
 				modifiedCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				modifiedCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				modifiedCell.setBorderWidth(2);

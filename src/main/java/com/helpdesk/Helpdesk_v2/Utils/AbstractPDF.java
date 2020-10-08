@@ -55,7 +55,7 @@ public class AbstractPDF {
 			Paragraph para = new Paragraph("Ticket Table", font);
 			para.setAlignment(Element.ALIGN_CENTER);
 			document.add(para);
-			document.add(Chunk.NEWLINE);
+			document.add(Chunk.NEWLINE);	
 
 			PdfPTable table = new PdfPTable(fieldName.length);
 			// Add PDF Table Header ->

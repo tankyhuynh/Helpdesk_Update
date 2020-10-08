@@ -25,6 +25,7 @@ public class TicketEntity {
 	private String technicianId;
 	private String technicianName;
 	private String modifiedBy;
+	private String commened;
 	
 
 	public TicketEntity() {
@@ -151,6 +152,14 @@ public class TicketEntity {
 
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
+	}
+
+	public String getCommened() {
+		return commened;
+	}
+
+	public void setCommened(String commened) {
+		this.commened = commened;
 	}
 
 	

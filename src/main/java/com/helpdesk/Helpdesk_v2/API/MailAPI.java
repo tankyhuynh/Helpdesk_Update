@@ -54,39 +54,6 @@ public class MailAPI {
 	}
 	
 	
-//	
-//	public void sendAdmin_addTicket(TicketEntity ticketEntity) {
-//
-//		String email = userService.findOne("5f6ff6a57cbfb744d95344c8").getEmail();
-//
-//		String	content = 	"TicketID: " + ticketEntity.getId() 
-//							+ "\n Time: " + ticketEntity.getStartDate().toString() 
-//							+ "\n Title: " + ticketEntity.getTitle() 
-//							+ "\n Place: " + ticketEntity.getPlace() 
-//							+ "\n Description: " + ticketEntity.getDescription()
-//							+ "\n Images: " + ticketEntity.getImages();
-//		
-//		MimeMessage mimeMessage = mailSender.createMimeMessage();
-//		MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
-//
-//		try {
-//			helper.setText(mailConstant.mail_body_add_ticket_admin
-//					+ "\n " + content
-//					+ "\n" + mailConstant.mail_footer_add_ticket_admin, true); // Use this or above line.
-//			helper.setTo(email);
-//			helper.setSubject(mailConstant.mail_title_add_ticket_user);
-//			mailSender.send(mimeMessage);
-//			
-//		} catch (MessagingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} // Use this or above line.
-//		
-//		mailSender.send(mimeMessage);	
-//
-//	}
-	
-	
 	public void sendUser_addTicket(String userId,TicketEntity ticketEntity, String emailTitle, String emailBody, String emailFooter) {
 
 		String email = userService.findOne(userId).getEmail();
@@ -105,7 +72,7 @@ public class MailAPI {
 		try {
 			helper.setText(emailBody
 					+ "<br> " + content
-					+ "<br>" + emailFooter, true); // Use this or above line.
+					+ "<br>" + emailFooter, true);
 			helper.setTo(email);
 			helper.setSubject(emailTitle);
 			
@@ -113,7 +80,7 @@ public class MailAPI {
 		} catch (MessagingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} // Use this or above line.
+		} 
 		
 		mailSender.send(mimeMessage);	
 		
@@ -141,14 +108,14 @@ public class MailAPI {
 			
 			helper.setText(mailConstant.mail_body_status_change_user
 					+ "<br> " + content
-					+ "<br>" + mailConstant.mail_footer_status_change_user, true); // Use this or above line.
+					+ "<br>" + mailConstant.mail_footer_status_change_user, true); 
 
 			mailSender.send(mimeMessage);
 			
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
-		} // Use this or above line.
+		} 
 		
 		mailSender.send(mimeMessage);	
 
@@ -178,13 +145,13 @@ public class MailAPI {
 			
 			helper.setText(mailConstant.mail_body_status_change_technician
 					+ "<br> " + content
-					+ "<br>" + mailConstant.mail_footer_status_change_technician, true); // Use this or above line.
+					+ "<br>" + mailConstant.mail_footer_status_change_technician, true); 
 
 			mailSender.send(mimeMessage);
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
-		} // Use this or above line.
+		} 
 		
 		mailSender.send(mimeMessage);	
 		
@@ -211,15 +178,15 @@ public class MailAPI {
 		try {
 			helper.setText(mailConstant.mail_body_drop_ticket_admin
 					+ "<br> " + content
-					+ "<br>" + mailConstant.mail_footer_drop_ticket_admin, true); // Use this or above line.
+					+ "<br>" + mailConstant.mail_footer_drop_ticket_admin, true);
 			helper.setTo(email);
 			helper.setSubject(mailConstant.mail_title_drop_ticket_admin);
 			mailSender.send(mimeMessage);
 			
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
-		} // Use this or above line.
+		} 
 		
 		mailSender.send(mimeMessage);	
 

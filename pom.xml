@@ -86,11 +86,6 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>com.tinify</groupId>
-			<artifactId>tinify</artifactId>
-			<version>RELEASE</version>
-		</dependency>
 
 
 		<dependency>

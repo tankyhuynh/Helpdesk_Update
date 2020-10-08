@@ -23,22 +23,8 @@ public class HelpdeskV2Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-//		sendEmail();
 		
 	}
-	
-//	void sendEmail() {
-//
-//        SimpleMailMessage msg = new SimpleMailMessage();
-//        msg.setTo("kyb1704826@student.ctu.edu.vn");
-//
-//        msg.setSubject("Testing from Spring Boot");
-//        msg.setText("Hello World \n Spring Boot Email");
-//
-//        javaMailSender.send(msg);
-//
-//    }
-//	
 	
 
 }

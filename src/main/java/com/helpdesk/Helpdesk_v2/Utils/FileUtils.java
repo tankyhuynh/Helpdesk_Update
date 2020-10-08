@@ -3,10 +3,7 @@ package com.helpdesk.Helpdesk_v2.Utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Map;
@@ -16,7 +13,6 @@ import org.springframework.stereotype.Component;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.Transformation;
 import com.cloudinary.utils.ObjectUtils;
-import com.tinify.Tinify;
 
 @Component
 public class FileUtils {

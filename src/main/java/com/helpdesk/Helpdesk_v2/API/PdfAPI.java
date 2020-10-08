@@ -65,7 +65,7 @@ public class PdfAPI {
 //      ByteArrayInputStream bis = abstractPDF.customerPDFReport(fieldName, ticketEntities);
         
 
-        String[] fieldName = {"Id", "Title", "startDate", "endDate", "description", "place", "userId", "fullName", "status", "technicianId", "technicianName", "modifiedBy", "comment"};
+        String[] fieldName = {"Id", "Title", "startDate", "endDate", "description", "place", "fullName", "status", "technicianName", "modifiedBy"};
         ByteArrayInputStream bis = pdfTicket.customerPDFReport(fieldName ,ticketEntities);
         
         

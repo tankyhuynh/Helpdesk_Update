@@ -51,13 +51,13 @@ public class PDFUtils<T> {
 			document.open();
 
 			// Add Text to PDF file ->
-			Font font = FontFactory.getFont(FontFactory.TIMES, 14, BaseColor.BLACK);
+			Font font = FontFactory.getFont(FontFactory.defaultEncoding, 14, BaseColor.BLACK);
 			Paragraph para = new Paragraph("Customer Table", font);
 			para.setAlignment(Element.ALIGN_CENTER);
 			document.add(para);
 			document.add(Chunk.NEWLINE);
 
-			PdfPTable table = new PdfPTable(13);
+			PdfPTable table = new PdfPTable(10);
 			table.setWidthPercentage(100);
 			// Add PDF Table Header ->
 			Stream.of(fieldName).forEach(headerTitle -> {
@@ -118,12 +118,7 @@ public class PDFUtils<T> {
 				placeCell.setPaddingRight(6);
 				table.addCell(placeCell);
 				
-				PdfPCell userIDCell = new PdfPCell(new Phrase(String.valueOf(ticket.getUserId())));
-				userIDCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				userIDCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				userIDCell.setBorderWidth(2);
-				userIDCell.setPaddingRight(6);
-				table.addCell(userIDCell);
+				
 				
 				PdfPCell fullNameCell = new PdfPCell(new Phrase(String.valueOf(ticket.getFullName())));
 				fullNameCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -143,13 +138,7 @@ public class PDFUtils<T> {
 				statusCell.setBorderWidth(2);
 				statusCell.setPaddingRight(6);
 				table.addCell(statusCell);
-				
-				PdfPCell technicianIDCell = new PdfPCell(new Phrase(String.valueOf(ticket.getTechnicianId())));
-				technicianIDCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				technicianIDCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				technicianIDCell.setBorderWidth(2);
-				technicianIDCell.setPaddingRight(6);
-				table.addCell(technicianIDCell);
+
 				
 				PdfPCell technicianNameCell = new PdfPCell(new Phrase(String.valueOf(ticket.getTechnicianName())));
 				technicianNameCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -158,19 +147,13 @@ public class PDFUtils<T> {
 				technicianNameCell.setPaddingRight(6);
 				table.addCell(technicianNameCell);
 				
+				
 				PdfPCell modifiedCell = new PdfPCell(new Phrase(String.valueOf(ticket.getModifiedBy())));
 				modifiedCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				modifiedCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				modifiedCell.setBorderWidth(2);
 				modifiedCell.setPaddingRight(6);
 				table.addCell(modifiedCell);
-				
-				PdfPCell commentCell = new PdfPCell(new Phrase(String.valueOf(ticket.getComment())));
-				commentCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				commentCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				commentCell.setBorderWidth(2);
-				commentCell.setPaddingRight(6);
-				table.addCell(commentCell);
 
 			}
 			document.add(table);

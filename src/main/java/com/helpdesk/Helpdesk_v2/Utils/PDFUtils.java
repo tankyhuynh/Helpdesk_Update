@@ -78,7 +78,7 @@ public class PDFUtils<T> {
 			
 			for (TicketEntity ticket : ticketEntity) {
 				
-				PdfPCell idCell = new PdfPCell(new Phrase(ticket.getId().toString()));
+				PdfPCell idCell = new PdfPCell(new Phrase(ticket.getId().toString(), font));
 				idCell.setPaddingLeft(6);
 				idCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				idCell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -92,14 +92,14 @@ public class PDFUtils<T> {
 				titleCell.setBorderWidth(2);
 				table.addCell(titleCell);
 
-				PdfPCell startDayCell = new PdfPCell(new Phrase(String.valueOf(ticket.getStartDate())));
+				PdfPCell startDayCell = new PdfPCell(new Phrase(String.valueOf(ticket.getStartDate()), font));
 				startDayCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				startDayCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				startDayCell.setPaddingRight(6);
 				startDayCell.setBorderWidth(2);
 				table.addCell(startDayCell);
 
-				PdfPCell endDayCell = new PdfPCell(new Phrase(String.valueOf(ticket.getEndDate())));
+				PdfPCell endDayCell = new PdfPCell(new Phrase(String.valueOf(ticket.getEndDate()), font));
 				endDayCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				endDayCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				endDayCell.setPaddingRight(6);
@@ -136,7 +136,7 @@ public class PDFUtils<T> {
 					status += item.getName() + " " + (new SimpleDateFormat("dd-MM-yyyy").format(item.getTime())) + "\n\n";
 				}
 				
-				PdfPCell statusCell = new PdfPCell(new Phrase(String.valueOf( status )));
+				PdfPCell statusCell = new PdfPCell(new Phrase(String.valueOf( status ), font));
 				statusCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				statusCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				statusCell.setBorderWidth(2);

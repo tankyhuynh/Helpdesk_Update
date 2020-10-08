@@ -17,6 +17,7 @@ import com.helpdesk.Helpdesk_v2.Entity.TicketEntity;
 import com.helpdesk.Helpdesk_v2.Entity.UserEntity;
 import com.helpdesk.Helpdesk_v2.Service.TicketService;
 import com.helpdesk.Helpdesk_v2.Utils.AbstractPDF;
+import com.helpdesk.Helpdesk_v2.Utils.PDFUtils;
 
 /**
 * @author root {4:14:19 PM}:
@@ -35,34 +36,35 @@ public class PdfAPI {
 	
 
 	@Autowired
-	private AbstractPDF<TicketEntity> pdfTicket;
+	private PDFUtils<TicketEntity> pdfTicket;
+	
+	@Autowired
+	private AbstractPDF abstractPDF;
 	
 	@GetMapping(value = "/customers",
             produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<InputStreamResource> customersReport() throws Exception {
 		
-//        ByteArrayInputStream bis = pdfUtils.customerPDFReport(customers);
-
         
-        
-//      String[] fieldName = {"id", "username", "password", "fullName", "roles", "token"};
-        
-        Field[] field = UserEntity.class.getDeclaredFields();
+        Field[] field = TicketEntity.class.getDeclaredFields();
         String[] fieldName = new String[field.length];
-        
-        
         
         int i=0;
         for (Field f : field) {
 			fieldName[i] = f.getName();
-			System.out.println(f.getName());
 			i++;
 		}
         
+        System.out.println("List Field Name: ");
+        for (String string : fieldName) {
+			System.out.print("\t"+ string);
+		}
+        
+
         
         List<TicketEntity> ticketEntities = ticketService.findAll();
-        ByteArrayInputStream bis = pdfTicket.customerPDFReport(fieldName, ticketEntities, TicketEntity.class);
-        
+//        ByteArrayInputStream bis = pdfTicket.customerPDFReport(ticketEntities);
+        ByteArrayInputStream bis = abstractPDF.customerPDFReport(fieldName, ticketEntities);
         
         
         HttpHeaders headers = new HttpHeaders();

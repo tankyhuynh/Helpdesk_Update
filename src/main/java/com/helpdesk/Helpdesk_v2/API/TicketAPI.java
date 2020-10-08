@@ -128,6 +128,7 @@ public class TicketAPI {
 					
 				if (ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Waiting")) {
 					ticketEntity.setStatus(Arrays.asList(new StatusEntity("Assigned")));
+					System.out.println("Status == Waiting");
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}
 				else {

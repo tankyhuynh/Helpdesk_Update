@@ -3,11 +3,13 @@ package com.helpdesk.Helpdesk_v2.Utils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
 
+import com.helpdesk.Helpdesk_v2.Entity.StatusEntity;
 import com.helpdesk.Helpdesk_v2.Entity.TicketEntity;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
@@ -22,6 +24,8 @@ import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.AcroFields.Item;
+import com.itextpdf.text.pdf.PdfEncodings;
 
 /**
 * @author root {4:49:19 PM}:
@@ -36,9 +40,9 @@ import com.itextpdf.text.pdf.PdfWriter;
 @Component
 public class PDFUtils<T> {
 
-	public static <T> ByteArrayInputStream customerPDFReport(List<TicketEntity> ticketEntity) throws Exception {
+	public static <T> ByteArrayInputStream customerPDFReport(String[] fieldName, List<TicketEntity> ticketEntity) throws Exception {
 		Document document = new Document();
-		document.setPageSize(PageSize.A3);
+		document.setPageSize(PageSize.A2);
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 
 		try {
@@ -47,15 +51,16 @@ public class PDFUtils<T> {
 			document.open();
 
 			// Add Text to PDF file ->
-			Font font = FontFactory.getFont(FontFactory.COURIER, 14, BaseColor.BLACK);
+			Font font = FontFactory.getFont(FontFactory.TIMES, 14, BaseColor.BLACK);
 			Paragraph para = new Paragraph("Customer Table", font);
 			para.setAlignment(Element.ALIGN_CENTER);
 			document.add(para);
 			document.add(Chunk.NEWLINE);
 
-			PdfPTable table = new PdfPTable(5);
+			PdfPTable table = new PdfPTable(13);
+			table.setWidthPercentage(100);
 			// Add PDF Table Header ->
-			Stream.of("ID", "Username", "Full Name", "Address", "Phone Number").forEach(headerTitle -> {
+			Stream.of(fieldName).forEach(headerTitle -> {
 				PdfPCell header = new PdfPCell();
 				Font headFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
 				header.setBackgroundColor(BaseColor.LIGHT_GRAY);
@@ -65,14 +70,17 @@ public class PDFUtils<T> {
 				table.addCell(header);
 			});
 
+			
+			
 			for (TicketEntity ticket : ticketEntity) {
+				
 				PdfPCell idCell = new PdfPCell(new Phrase(ticket.getId().toString()));
 				idCell.setPaddingLeft(6);
 				idCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				idCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				idCell.setBorderWidth(2);
 				table.addCell(idCell);
-
+				
 				PdfPCell titleCell = new PdfPCell(new Phrase(ticket.getTitle()));
 				titleCell.setPaddingLeft(6);
 				titleCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -94,12 +102,7 @@ public class PDFUtils<T> {
 				endDayCell.setBorderWidth(2);
 				table.addCell(endDayCell);
 
-				PdfPCell imagesCell = new PdfPCell(new Phrase(String.valueOf(ticket.getImages())));
-				imagesCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				imagesCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				imagesCell.setBorderWidth(2);
-				imagesCell.setPaddingRight(6);
-				table.addCell(imagesCell);
+				
 				
 				PdfPCell descriptionCell = new PdfPCell(new Phrase(String.valueOf(ticket.getDescription())));
 				descriptionCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -129,7 +132,12 @@ public class PDFUtils<T> {
 				fullNameCell.setPaddingRight(6);
 				table.addCell(fullNameCell);
 				
-				PdfPCell statusCell = new PdfPCell(new Phrase(String.valueOf(ticket.getStatus())));
+				String status = "";
+				for (StatusEntity item : ticket.getStatus()) {
+					status += item.getName() + "\n";
+				}
+				
+				PdfPCell statusCell = new PdfPCell(new Phrase(String.valueOf( status )));
 				statusCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				statusCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				statusCell.setBorderWidth(2);
@@ -186,6 +194,27 @@ public class PDFUtils<T> {
 
 	    });
 	}
+	
+	
+	
+	 public static PdfPCell newCell(String text, Font font) {
+		    PdfPCell pdfCell = null;
+		    PdfPCell cell = null;
+
+		    if (text == null) {
+		      // create a blank cell
+		      cell = new PdfPCell(new Phrase(" ", font));
+		    }
+		    else {
+		      cell = new PdfPCell(new Phrase(text, font));
+		    }
+
+		    pdfCell = new PdfPCell(cell);
+
+		    return pdfCell;
+		  }
+
+
 	
 	
 	

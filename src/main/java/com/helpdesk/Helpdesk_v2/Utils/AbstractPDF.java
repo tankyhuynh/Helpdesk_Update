@@ -37,7 +37,6 @@ import com.itextpdf.text.pdf.PdfWriter;
  */
 
 @Component
-
 public class AbstractPDF {
 
 	
@@ -53,7 +52,7 @@ public class AbstractPDF {
 
 			// Add Text to PDF file ->
 			Font font = FontFactory.getFont(FontFactory.TIMES, 14, BaseColor.BLACK);
-			Paragraph para = new Paragraph("Customer Table", font);
+			Paragraph para = new Paragraph("Ticket Table", font);
 			para.setAlignment(Element.ALIGN_CENTER);
 			document.add(para);
 			document.add(Chunk.NEWLINE);
@@ -81,9 +80,6 @@ public class AbstractPDF {
 								
 							 	PdfPCell idCell;
 							 	try {
-									
-							 		
-								 	
 							        System.out.print("Field name: " + field.getName() + "\t");	
 							        
 							        field.setAccessible(true);

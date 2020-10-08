@@ -1,6 +1,8 @@
 package com.helpdesk.Helpdesk_v2.API;
 
 import java.io.ByteArrayInputStream;
+import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.helpdesk.Helpdesk_v2.Entity.TicketEntity;
+import com.helpdesk.Helpdesk_v2.Entity.UserEntity;
 import com.helpdesk.Helpdesk_v2.Service.TicketService;
 import com.helpdesk.Helpdesk_v2.Utils.AbstractPDF;
 
@@ -43,7 +46,19 @@ public class PdfAPI {
         
         
 //      String[] fieldName = {"id", "username", "password", "fullName", "roles", "token"};
-        String[] fieldName = {"Id", "Title", "Start Date", "End Date", "Image"};
+        
+        Field[] field = UserEntity.class.getDeclaredFields();
+        String[] fieldName = new String[field.length];
+        
+        
+        
+        int i=0;
+        for (Field f : field) {
+			fieldName[i] = f.getName();
+			System.out.println(f.getName());
+			i++;
+		}
+        
         
         List<TicketEntity> ticketEntities = ticketService.findAll();
         ByteArrayInputStream bis = pdfTicket.customerPDFReport(fieldName, ticketEntities, TicketEntity.class);

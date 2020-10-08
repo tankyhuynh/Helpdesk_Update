@@ -51,7 +51,7 @@ public class AbstractPDF<T> {
 			document.add(para);
 			document.add(Chunk.NEWLINE);
 
-			PdfPTable table = new PdfPTable(5);
+			PdfPTable table = new PdfPTable(fieldName.length);
 			// Add PDF Table Header ->
 			Stream.of(fieldName).forEach(headerTitle -> {
 				PdfPCell header = new PdfPCell();
@@ -68,34 +68,40 @@ public class AbstractPDF<T> {
 				
 				for (T user : entity) {
 					
-					 ReflectionUtils.doWithFields(user.getClass(), field -> {
+					try {
 						
-						 	PdfPCell idCell;
-					        System.out.print("Field name: " + field.getName());
-					        
-					        field.setAccessible(true);
-					        if (field.getType().isArray()) {
-								System.out.println(field.get(user).toString() + " is Array");
-								  idCell = new PdfPCell(new Phrase("List"));
-								 System.out.println("\tField value: "+ field.get(user));
-							}
-					        else {
-					        	idCell = new PdfPCell(new Phrase(field.get(user).toString()));
-					        	System.out.println("\tField value: "+ field.get(user));
-					        }
-					       
-					        
-							idCell.setPaddingLeft(6);
-							idCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-							idCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-							idCell.setBorderWidth(2);
-//							idCell.setUseVariableBorders(true);
-//							idCell.setBorderColorTop(BaseColor.GREEN);
-							table.addCell(idCell);
-					        
-					        
+						 ReflectionUtils.doWithFields(user.getClass(), field -> {
+								
+							 	PdfPCell idCell;
+						        System.out.print("Field name: " + field.getName());
+						        
+						        field.setAccessible(true);
+						        if (field.getType().isArray()) {
+									System.out.println(field.get(user).toString() + " is Array");
+									  idCell = new PdfPCell(new Phrase("List"));
+									 System.out.println("\tField value: "+ field.get(user));
+								}
+						        else {
+						        	idCell = new PdfPCell(new Phrase(field.get(user).toString()));
+						        	System.out.println("\tField value: "+ field.get(user));
+						        }
+						       
+						        
+								idCell.setPaddingLeft(6);
+								idCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+								idCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+								idCell.setBorderWidth(2);
+//								idCell.setUseVariableBorders(true);
+//								idCell.setBorderColorTop(BaseColor.GREEN);
+								table.addCell(idCell);
+						        
+						        
 
-					    });
+						    });
+						
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
 					
 					
 					

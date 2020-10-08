@@ -130,6 +130,7 @@ public class TicketAPI {
 					ticketEntity.setStatus(Arrays.asList(new StatusEntity("Assigned")));
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}
+				else {ticketEntity.setStatus(ticketEntity.getStatus());}
 
 				mailAPI.sendUser_statusChange(ticketEntity.getUserId(), ticketEntity);
 				mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);

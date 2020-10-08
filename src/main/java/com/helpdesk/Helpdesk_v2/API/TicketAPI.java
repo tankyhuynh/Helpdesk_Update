@@ -132,8 +132,7 @@ public class TicketAPI {
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}
 				else {
-					System.out.println("Status != Waiting");
-					ticketEntity.setStatus(ticketEntity.getStatus());}
+					System.out.println("Status != Waiting");}
 
 				mailAPI.sendUser_statusChange(ticketEntity.getUserId(), ticketEntity);
 				mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);

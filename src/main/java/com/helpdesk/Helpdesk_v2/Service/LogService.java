@@ -56,6 +56,10 @@ public class LogService {
 		logRepo.deleteById(id);
 	}
 	
+	public void deleteAll() {
+		logRepo.deleteAll();
+	}
+	
 	
 	
 	

@@ -40,7 +40,6 @@ import com.itextpdf.text.pdf.PdfWriter;
 @Component
 public class PDFUtils<T> {
 
-//	public static File fontFile = new File("/home/tanky/Downloads/VietFontsWeb1_ttf/vuArial.ttf");
 	public static File fontFile = new File("/vuArial.ttf");
 	
 	public static <T> ByteArrayInputStream customerPDFReport(String[] fieldName, List<TicketEntity> ticketEntity) throws Exception {
@@ -61,7 +60,7 @@ public class PDFUtils<T> {
 			document.add(para);
 			document.add(Chunk.NEWLINE);
 
-			PdfPTable table = new PdfPTable(10);
+			PdfPTable table = new PdfPTable(9);
 			table.setWidthPercentage(100);
 			// Add PDF Table Header ->
 			Stream.of(fieldName).forEach(headerTitle -> {
@@ -150,14 +149,6 @@ public class PDFUtils<T> {
 				technicianNameCell.setBorderWidth(2);
 				technicianNameCell.setPaddingRight(6);
 				table.addCell(technicianNameCell);
-				
-				
-				PdfPCell modifiedCell = new PdfPCell(new Phrase(String.valueOf(ticket.getModifiedBy()), font));
-				modifiedCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				modifiedCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				modifiedCell.setBorderWidth(2);
-				modifiedCell.setPaddingRight(6);
-				table.addCell(modifiedCell);
 
 			}
 			document.add(table);

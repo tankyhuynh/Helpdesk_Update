@@ -61,4 +61,8 @@ public class TicketService {
 		ticketRepo.deleteById(id);
 	}
 	
+	public void deleteAll() {
+		ticketRepo.deleteAll();
+	}
+	
 }

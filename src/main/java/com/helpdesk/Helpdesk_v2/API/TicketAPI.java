@@ -159,8 +159,17 @@ public class TicketAPI {
 		mailAPI.sendAdmin_dropTicket(ticketEntity);
 		ticketService.delete(ticketEntity.getId());
 
-		
-		
 	}
+	
+	@DeleteMapping("/all")
+	public void deleteAll(String[] ids) {
+		ticketService.deleteAll();
+	}
+	
+	
+	
+	
+	
+	
 
 }

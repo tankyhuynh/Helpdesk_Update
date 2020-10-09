@@ -6,6 +6,7 @@ package com.helpdesk.Helpdesk_v2.API;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.helpdesk.Helpdesk_v2.Entity.LogEntity;
 import com.helpdesk.Helpdesk_v2.Service.LogService;
+import com.mongodb.client.MongoCollection;
 
 /**
 * @author root {6:51:02 PM}:
@@ -65,6 +67,10 @@ public class LogAPI {
 		logService.delete(id);
 	}
 	
+	@DeleteMapping("/all")
+	public void deteleAll() {
+		logService.deleteAll();
+	}
 	
 	
 	

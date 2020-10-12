@@ -25,7 +25,7 @@ public class TicketEntity {
 	private String technicianId;
 	private String technicianName;
 	private String modifiedBy;
-	private String comment;
+	private List<CommentEntity> comment;
 	
 
 	public TicketEntity() {
@@ -154,14 +154,15 @@ public class TicketEntity {
 		this.modifiedBy = modifiedBy;
 	}
 
-	public String getComment() {
+	public List<CommentEntity> getComment() {
 		return comment;
 	}
 
-	public void setComment(String comment) {
+	public void setComment(List<CommentEntity> comment) {
 		this.comment = comment;
 	}
 
+	
 	
 
 	

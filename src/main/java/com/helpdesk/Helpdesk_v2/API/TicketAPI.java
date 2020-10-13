@@ -25,9 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.helpdesk.Helpdesk_v2.Constant.MailConstant;
 import com.helpdesk.Helpdesk_v2.Constant.TicketConstant;
+import com.helpdesk.Helpdesk_v2.Entity.CommentEntity;
 import com.helpdesk.Helpdesk_v2.Entity.LogEntity;
 import com.helpdesk.Helpdesk_v2.Entity.StatusEntity;
 import com.helpdesk.Helpdesk_v2.Entity.TicketEntity;
+import com.helpdesk.Helpdesk_v2.Service.CommentService;
 import com.helpdesk.Helpdesk_v2.Service.LogService;
 import com.helpdesk.Helpdesk_v2.Service.TicketService;
 import com.helpdesk.Helpdesk_v2.Service.UserService;
@@ -57,6 +59,9 @@ public class TicketAPI {
 	
 	@Autowired
 	private LogService logService;
+	
+	@Autowired
+	private CommentService commentService;
 
 	@GetMapping
 	public ResponseEntity<List<TicketEntity>> getAll() throws Exception {
@@ -113,6 +118,14 @@ public class TicketAPI {
 		LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getUserId()).getFullName() + ticketConstant.add_status +  ticketEntity.getId() + " vào", "https://img.icons8.com/ios-filled/64/000000/information.png");
 		logService.save(logEntity);
 		
+		CommentEntity commentEntity = new CommentEntity(ticketEntity.getFullName(), false, ticketEntity.getDescription());
+		
+		commentEntity.setId(UUID.randomUUID().toString());
+		commentEntity.setUserId(ticketEntity.getUserId());
+		ticketEntity.setComment(Arrays.asList(commentEntity.getId()));
+		commentService.save(commentEntity);
+		
+		
 		return ResponseEntity.ok(ticketService.save(ticketEntity));
 	}
 
@@ -142,6 +155,7 @@ public class TicketAPI {
 			LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + ticketConstant.update_status +  ticketEntity.getId() + " vào", "https://img.icons8.com/ios-filled/64/000000/information.png");
 			logService.save(logEntity);
 
+
 			return ResponseEntity.status(HttpStatus.OK).body(ticketService.saveAndFlush(ticketEntity));
 		}
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -165,6 +179,11 @@ public class TicketAPI {
 	public void deleteAll(String[] ids) {
 		ticketService.deleteAll();
 	}
+	
+	
+	
+	
+	
 	
 	
 	

@@ -21,21 +21,29 @@ public class CommentEntity {
 	@Id
 	private String id;
 	private String fullName;
+	private String userId;
 	private Date time = Calendar.getInstance().getTime();
 	private boolean isEdited;
 	private String content;
 	
 	public CommentEntity() {
-		// TODO Auto-generated constructor stub
+		this.time = Calendar.getInstance().getTime();
 	}
 
-	public CommentEntity(String fullName, Date time, boolean isEdited, String content) {
+	public CommentEntity(String fullName, boolean isEdited, String content) {
 		super();
 		this.fullName = fullName;
-		this.time = time;
 		this.isEdited = isEdited;
 		this.content = content;
 	}
+	
+	public CommentEntity(String content) {
+		super();
+		this.content = content;
+	}
+	
+	
+	
 
 	public String getId() {
 		return id;
@@ -75,6 +83,14 @@ public class CommentEntity {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	
 	

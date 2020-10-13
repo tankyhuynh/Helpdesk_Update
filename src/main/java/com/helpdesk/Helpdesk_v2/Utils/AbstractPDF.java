@@ -73,7 +73,7 @@ public class AbstractPDF {
 				
 				
 				for (TicketEntity ticket : entity) {
-					System.out.println(ticket.getId() + " " + ticket.getTitle() + ticket.getStartDate() + " " +ticket.getEndDate() + " " + ticket.getPlace()+ " " + ticket.getDescription() + " " + ticket.getImages() + " " + ticket.getUserId() + " " + ticket.getComment());
+//					System.out.println(ticket.getId() + " " + ticket.getTitle() + ticket.getStartDate() + " " +ticket.getEndDate() + " " + ticket.getPlace()+ " " + ticket.getDescription() + " " + ticket.getImages() + " " + ticket.getUserId() + " " + ticket.getComment());
 					try {
 						
 						 ReflectionUtils.doWithFields(ticket.getClass(), field -> {

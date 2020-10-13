@@ -61,8 +61,8 @@ public class MailAPI {
 		String	content = 	"<br>TicketID: " + ticketEntity.getId() 
 							+ "<br> Time: " + (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.JAPANESE)).format(ticketEntity.getStartDate())
 							+ "<br> Title: " + ticketEntity.getTitle() 
-							+ "<br> Place: " + ticketEntity.getPlace() 
 							+ "<br> Description: " + ticketEntity.getDescription()
+							+ "<br> Place: " + ticketEntity.getPlace() 
 							+ "<br> Images: " + ticketEntity.getImages() + "<br>";
 
 		
@@ -95,6 +95,7 @@ public class MailAPI {
 		String	content = 	"<br>TicketID: " + ticketEntity.getId() 
 							+ "<br> Time: " + ticketEntity.getStartDate().toString() 
 							+ "<br> Title: " + ticketEntity.getTitle() 
+							+ "<br> Description: " + ticketEntity.getDescription()
 							+ "<br> Status: " + ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName() + " at " + ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getTime()
 							+ "<br> Technician: " + ticketEntity.getTechnicianName();
 					
@@ -131,8 +132,8 @@ public class MailAPI {
 		String	content = 	"<br>TicketID: " + ticketEntity.getId() 
 							+ "<br> Time: " + (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.JAPANESE)).format(ticketEntity.getStartDate())
 							+ "<br> Title: " + ticketEntity.getTitle() 
-							+ "<br> Place: " + ticketEntity.getPlace() 
 							+ "<br> Description: " + ticketEntity.getDescription()
+							+ "<br> Place: " + ticketEntity.getPlace() 
 							+ "<br> Images: " + ticketEntity.getImages() + "<br>";
 
 		
@@ -169,8 +170,8 @@ public class MailAPI {
 		String	content = 	"<br>TicketID: " + ticketEntity.getId() 
 							+ "<br> Time: " + ticketEntity.getStartDate().toString() 
 							+ "<br> Title: " + ticketEntity.getTitle() 
-							+ "<br> Place: " + ticketEntity.getPlace() 
 							+ "<br> Description: " + ticketEntity.getDescription()
+							+ "<br> Place: " + ticketEntity.getPlace() 
 							+ "<br> Images: " + ticketEntity.getImages();
 		
 		

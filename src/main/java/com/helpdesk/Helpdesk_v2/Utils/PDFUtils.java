@@ -106,13 +106,14 @@ public class PDFUtils<T> {
 				table.addCell(endDayCell);
 
 				
-				
 				PdfPCell descriptionCell = new PdfPCell(new Phrase(String.valueOf(ticket.getDescription()), font));
 				descriptionCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				descriptionCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				descriptionCell.setBorderWidth(2);
 				descriptionCell.setPaddingRight(6);
 				table.addCell(descriptionCell);
+				
+				
 				
 				PdfPCell placeCell = new PdfPCell(new Phrase(String.valueOf(ticket.getPlace()), font));
 				placeCell.setVerticalAlignment(Element.ALIGN_MIDDLE);

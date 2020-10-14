@@ -2,6 +2,7 @@ package com.helpdesk.Helpdesk_v2.API;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -68,6 +69,8 @@ public class CommentAPI {
 	public ResponseEntity<TicketEntity> commment(@PathVariable String id, @RequestBody CommentEntity commentEntity) {
 		TicketEntity ticketEntity = ticketService.findOne(id);
 		commentEntity.setTime(Calendar.getInstance().getTime());
+		
+		commentEntity.setId(UUID.randomUUID().toString());
 		ticketEntity.getComment().add(commentEntity.getId());
 		
 		ticketService.save(ticketEntity);

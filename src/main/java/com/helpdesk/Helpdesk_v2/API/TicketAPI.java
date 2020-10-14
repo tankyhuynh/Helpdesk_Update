@@ -122,6 +122,9 @@ public class TicketAPI {
 		
 		commentEntity.setId(UUID.randomUUID().toString());
 		commentEntity.setUserId(ticketEntity.getUserId());
+		commentEntity.setTicketId(ticketEntity.getId());
+		
+		
 		ticketEntity.setComment(Arrays.asList(commentEntity.getId()));
 		commentService.save(commentEntity);
 		

@@ -25,6 +25,7 @@ public class CommentEntity {
 	private Date time = Calendar.getInstance().getTime();
 	private boolean isEdited;
 	private String content;
+	private String ticketId;
 	
 	public CommentEntity() {
 		this.time = Calendar.getInstance().getTime();
@@ -91,6 +92,14 @@ public class CommentEntity {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public String getTicketId() {
+		return ticketId;
+	}
+
+	public void setTicketId(String ticketId) {
+		this.ticketId = ticketId;
 	}
 	
 	

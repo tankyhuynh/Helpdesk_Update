@@ -29,6 +29,10 @@ public class CommentService {
 	public List<CommentEntity> findAll() {
 		return commentRepo.findAll(Sort.by(Sort.Direction.DESC, "time"));
 	}
+	
+	public List<CommentEntity> findAllByTicketId(String ticketId) {
+		return commentRepo.findAllByTicketId(ticketId);
+	}
 
 	
 	public CommentEntity findOneById(String id) {

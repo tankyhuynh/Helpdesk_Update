@@ -1,5 +1,6 @@
 package com.helpdesk.Helpdesk_v2.API;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
@@ -40,6 +41,9 @@ public class CommentAPI {
 	@Autowired
 	private CommentService commentService;
 	
+	@Autowired
+	private MailAPI mailAPI;
+	
 	
 	@GetMapping
 	public List<CommentEntity> getAll() {
@@ -76,6 +80,20 @@ public class CommentAPI {
 		ticketService.save(ticketEntity);
 		commentService.save(commentEntity);
 		
+	
+		List<String> userIds = new ArrayList<String>();
+		for (CommentEntity commentId : commentService.findAllByTicketId(id)) {
+			if (!userIds.contains(commentId.getUserId())) {
+				userIds.add(commentId.getUserId());
+			}
+		}
+		
+		for (String userId : userIds) {
+			mailAPI.send_updateTicket(userId);
+		}
+		
+		
+
 		return ResponseEntity.ok(ticketService.save(ticketEntity));
 	}
 	
@@ -85,6 +103,12 @@ public class CommentAPI {
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable String id) {
 		commentService.delete(id);
+	}
+	
+	
+	@DeleteMapping("/all")
+	public void deleteAll() {
+		commentService.deleteAll();
 	}
 	
 	

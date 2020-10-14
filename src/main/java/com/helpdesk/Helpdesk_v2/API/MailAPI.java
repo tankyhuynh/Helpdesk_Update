@@ -46,8 +46,8 @@ public class MailAPI {
 		String email = userService.findOne(userId).getEmail();
 		msg.setTo(email);
 
-		msg.setSubject("Alert from admin");
-		msg.setText("Email alert");
+		msg.setSubject("Alert Alert Alert !!!!!!!");
+		msg.setText("Have a new comment in ticket");
 
 		javaMailSender.send(msg);
 

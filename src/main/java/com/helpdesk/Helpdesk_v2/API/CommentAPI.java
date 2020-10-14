@@ -66,7 +66,7 @@ public class CommentAPI {
 
 		return ResponseEntity.ok(commentService.save(commentEntity));
 	}
-	
+	 
 	
 	@PutMapping("/ticket/{id}")
 	@Transactional
@@ -76,7 +76,9 @@ public class CommentAPI {
 		
 		commentEntity.setId(UUID.randomUUID().toString());
 		ticketEntity.getComment().add(commentEntity.getId());
+			
 		
+		commentEntity.setTicketId(id);
 		ticketService.save(ticketEntity);
 		commentService.save(commentEntity);
 		
@@ -91,6 +93,8 @@ public class CommentAPI {
 		for (String userId : userIds) {
 			mailAPI.send_updateTicket(userId);
 		}
+		
+		
 		
 		
 

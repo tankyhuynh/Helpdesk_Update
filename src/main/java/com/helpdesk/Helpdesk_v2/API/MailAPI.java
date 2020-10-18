@@ -39,7 +39,7 @@ public class MailAPI {
 	private JavaMailSender mailSender;
 	
 
-	public void send_updateTicket(@RequestBody String userId) {
+	public void send_updateTicket(String userId) {
 
 		SimpleMailMessage msg = new SimpleMailMessage();
 

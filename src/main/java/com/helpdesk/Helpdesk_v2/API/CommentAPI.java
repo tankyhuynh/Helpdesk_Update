@@ -87,6 +87,7 @@ public class CommentAPI {
 		for (CommentEntity commentId : commentService.findAllByTicketId(id)) {
 			if (!userIds.contains(commentId.getUserId())) {
 				userIds.add(commentId.getUserId());
+				
 			}
 		}
 		

@@ -95,7 +95,9 @@ public class CommentAPI {
 			}
 		}
 	
-		mailAPI.send_updateTicket(emails.toArray(String[]::new));
+		String[] strings = emails.stream().toArray(String[]::new);
+		
+		mailAPI.send_updateTicket(strings);
 		
 		
 		ticketService.save(ticketEntity);

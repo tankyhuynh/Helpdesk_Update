@@ -1,6 +1,7 @@
 package com.helpdesk.Helpdesk_v2.API;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
@@ -21,6 +22,7 @@ import com.helpdesk.Helpdesk_v2.Entity.CommentEntity;
 import com.helpdesk.Helpdesk_v2.Entity.TicketEntity;
 import com.helpdesk.Helpdesk_v2.Service.CommentService;
 import com.helpdesk.Helpdesk_v2.Service.TicketService;
+import com.helpdesk.Helpdesk_v2.Service.UserService;
 
 /**
 * @author root {8:41:39 PM}:
@@ -43,6 +45,9 @@ public class CommentAPI {
 	
 	@Autowired
 	private MailAPI mailAPI;
+	
+	@Autowired
+	private UserService userService;
 	
 	
 	@GetMapping
@@ -70,7 +75,7 @@ public class CommentAPI {
 	
 	@PutMapping("/ticket/{id}")
 	@Transactional
-	public ResponseEntity<TicketEntity> commment(@PathVariable String id, @RequestBody CommentEntity commentEntity) {
+	public ResponseEntity<List<CommentEntity>> commment(@PathVariable String id, @RequestBody CommentEntity commentEntity) {
 		TicketEntity ticketEntity = ticketService.findOne(id);
 		commentEntity.setTime(Calendar.getInstance().getTime());
 		
@@ -83,23 +88,21 @@ public class CommentAPI {
 		commentService.save(commentEntity);
 		
 	
-		List<String> userIds = new ArrayList<String>();
+		List<String> emails = new ArrayList<String>();
 		for (CommentEntity commentId : commentService.findAllByTicketId(id)) {
-			if (!userIds.contains(commentId.getUserId())) {
-				userIds.add(commentId.getUserId());
-				
+			if (!emails.contains(commentId.getUserId())) {
+				emails.add((userService.findOne(commentId.getUserId())).getEmail());
 			}
 		}
-		
-		for (String userId : userIds) {
-			mailAPI.send_updateTicket(userId);
-		}
+	
+		mailAPI.send_updateTicket(emails.toArray(String[]::new));
 		
 		
+		ticketService.save(ticketEntity);
 		
 		
 
-		return ResponseEntity.ok(ticketService.save(ticketEntity));
+		return ResponseEntity.ok(commentService.findAll());
 	}
 	
 	

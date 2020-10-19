@@ -147,6 +147,12 @@ public class TicketAPI {
 					System.out.println("Status == Waiting");
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}
+				
+				else if(ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Closed")) {
+					ticketEntity.setEndDate(Calendar.getInstance().getTime());
+					mailAPI.sendUser_statusChange(ticketEntity.getUserId(), ticketEntity);
+					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
+				}
 				else {
 					System.out.println("Status != Waiting");}
 

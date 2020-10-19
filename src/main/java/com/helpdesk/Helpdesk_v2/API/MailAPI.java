@@ -5,6 +5,8 @@ package com.helpdesk.Helpdesk_v2.API;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 import javax.mail.MessagingException;
@@ -39,12 +41,12 @@ public class MailAPI {
 	private JavaMailSender mailSender;
 	
 
-	public void send_updateTicket(String userId) {
+	public void send_updateTicket(String[] emails) {
+		
+		
 
 		SimpleMailMessage msg = new SimpleMailMessage();
-
-		String email = userService.findOne(userId).getEmail();
-		msg.setTo(email);
+		msg.setTo(emails);
 
 		msg.setSubject("Alert Alert Alert !!!!!!!");
 		msg.setText("Have a new comment in ticket");

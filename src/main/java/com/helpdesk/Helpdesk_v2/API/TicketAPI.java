@@ -164,6 +164,7 @@ public class TicketAPI {
 					languageObject.setVi("Đã phân công");
 					ticketEntity.setStatus(Arrays.asList(new StatusEntity(languageObject)));
 					oldEntity.getStatus().add(new StatusEntity(languageObject));
+					ticketEntity.setStatus(oldEntity.getStatus());
 					System.out.println("Status != Waiting");
 					
 				}
@@ -177,7 +178,7 @@ public class TicketAPI {
 			logService.save(logEntity);
 
 
-			return ResponseEntity.status(HttpStatus.OK).body(ticketService.saveAndFlush(oldEntity));
+			return ResponseEntity.status(HttpStatus.OK).body(ticketService.saveAndFlush(ticketEntity));
 		}
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}

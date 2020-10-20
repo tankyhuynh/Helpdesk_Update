@@ -140,6 +140,7 @@ public class TicketAPI {
 
 		if (ticketService.findOne(id) != null) {
 			ticketEntity.setId(id);
+			TicketEntity oldEntity = ticketService.findOne(id);
 			
 			if (ticketEntity.getTechnicianId() != null && !ticketEntity.getTechnicianId().isEmpty()) {
 					
@@ -162,6 +163,7 @@ public class TicketAPI {
 					languageObject.setEn("Assigned");
 					languageObject.setVi("Đã phân công");
 					ticketEntity.setStatus(Arrays.asList(new StatusEntity(languageObject)));
+					oldEntity.getStatus().add(new StatusEntity(languageObject));
 					System.out.println("Status != Waiting");
 					
 				}
@@ -175,7 +177,7 @@ public class TicketAPI {
 			logService.save(logEntity);
 
 
-			return ResponseEntity.status(HttpStatus.OK).body(ticketService.saveAndFlush(ticketEntity));
+			return ResponseEntity.status(HttpStatus.OK).body(ticketService.saveAndFlush(oldEntity));
 		}
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}

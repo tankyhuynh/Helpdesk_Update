@@ -29,6 +29,7 @@ import com.helpdesk.Helpdesk_v2.Entity.CommentEntity;
 import com.helpdesk.Helpdesk_v2.Entity.LogEntity;
 import com.helpdesk.Helpdesk_v2.Entity.StatusEntity;
 import com.helpdesk.Helpdesk_v2.Entity.TicketEntity;
+import com.helpdesk.Helpdesk_v2.Model.MultiLanguageObject;
 import com.helpdesk.Helpdesk_v2.Service.CommentService;
 import com.helpdesk.Helpdesk_v2.Service.LogService;
 import com.helpdesk.Helpdesk_v2.Service.TicketService;
@@ -142,13 +143,13 @@ public class TicketAPI {
 			
 			if (ticketEntity.getTechnicianId() != null && !ticketEntity.getTechnicianId().isEmpty()) {
 					
-				if (ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Waiting")) {
-					ticketEntity.setStatus(Arrays.asList(new StatusEntity("Assigned")));
+				if (ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Waiting")  || ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Đang chờ")) {
+					ticketEntity.setStatus(Arrays.asList(new StatusEntity(new MultiLanguageObject("Assigned", "Đã phân công"))));
 					System.out.println("Status == Waiting");
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}
 				
-				else if(ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Closed")) {
+				else if(ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Closed") || ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Đã đóng")) {
 					ticketEntity.setEndDate(Calendar.getInstance().getTime());
 					mailAPI.sendUser_statusChange(ticketEntity.getUserId(), ticketEntity);
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);

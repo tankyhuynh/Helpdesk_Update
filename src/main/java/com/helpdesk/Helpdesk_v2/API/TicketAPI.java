@@ -155,6 +155,7 @@ public class TicketAPI {
 				
 				else if(ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().getEn().equals("Closed") || ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Đã đóng")) {
 					ticketEntity.setEndDate(Calendar.getInstance().getTime());
+					ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).setName(new MultiLanguageObject("Closed", "Đã đóng"));
 					mailAPI.sendUser_statusChange(ticketEntity.getUserId(), ticketEntity);
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}

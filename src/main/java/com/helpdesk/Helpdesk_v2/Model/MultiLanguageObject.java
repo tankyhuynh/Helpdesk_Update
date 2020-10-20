@@ -18,12 +18,11 @@ public class MultiLanguageObject {
 		
 	}
 	
-	public MultiLanguageObject(String en) {
-		this.en = en;
-	}
+//	public MultiLanguageObject(String en) {
+//		this.en = en;
+//	}
 
 	public MultiLanguageObject(String en, String vi) {
-		super();
 		this.en = en;
 		this.vi = vi;
 	}

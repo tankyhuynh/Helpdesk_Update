@@ -9,7 +9,7 @@ package com.helpdesk.Helpdesk_v2.Model;
  *
  */
 public class MultiLanguageObject {
-	
+
 	private String vi;
 	private String en;
 	

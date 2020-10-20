@@ -159,12 +159,7 @@ public class TicketAPI {
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}
 				else {
-					MultiLanguageObject languageObject = new MultiLanguageObject("Assigned", "Đã phân công");
-					languageObject.setEn("Assigned");
-					languageObject.setVi("Đã phân công");
-					ticketEntity.setStatus(Arrays.asList(new StatusEntity(languageObject)));
-					oldEntity.getStatus().add(new StatusEntity(languageObject));
-					ticketEntity.setStatus(oldEntity.getStatus());
+		
 					System.out.println("Status != Waiting");
 					
 				}

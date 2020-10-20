@@ -7,7 +7,7 @@ import com.helpdesk.Helpdesk_v2.Model.MultiLanguageObject;
 
 public class StatusEntity {
 
-	private MultiLanguageObject name = new MultiLanguageObject("Waiting", "Đang chờ");
+	private MultiLanguageObject name;
 	private Date time = Calendar.getInstance().getTime();
 	
 	public StatusEntity() {

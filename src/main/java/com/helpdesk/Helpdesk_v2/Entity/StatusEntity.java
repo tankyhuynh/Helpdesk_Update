@@ -19,7 +19,6 @@ public class StatusEntity {
 	}
 
 	public StatusEntity(MultiLanguageObject name, Date time) {
-		super();
 		this.name = name;
 		this.time = time;
 	}

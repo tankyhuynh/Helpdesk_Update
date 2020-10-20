@@ -11,7 +11,7 @@ public class StatusEntity {
 	private Date time = Calendar.getInstance().getTime();
 	
 	public StatusEntity() {
-
+		this.name = new MultiLanguageObject("Waiting", "Đang chờ");
 	}
 	
 	public StatusEntity(MultiLanguageObject name) {

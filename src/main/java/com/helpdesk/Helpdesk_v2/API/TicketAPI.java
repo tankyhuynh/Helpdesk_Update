@@ -143,7 +143,7 @@ public class TicketAPI {
 			
 			if (ticketEntity.getTechnicianId() != null && !ticketEntity.getTechnicianId().isEmpty()) {
 					
-				if (ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Waiting")  || ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Đang chờ")) {
+				if (ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().getEn().equals("Waiting")) {
 					ticketEntity.setStatus(Arrays.asList(new StatusEntity(new MultiLanguageObject("Assigned", "Đã phân công"))));
 					System.out.println("Status == Waiting");
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);

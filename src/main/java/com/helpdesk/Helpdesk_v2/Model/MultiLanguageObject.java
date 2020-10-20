@@ -17,10 +17,7 @@ public class MultiLanguageObject {
 	public MultiLanguageObject() {
 		
 	}
-	
-	public MultiLanguageObject(String en) {
-		this.en = en;
-	}
+
 
 	public MultiLanguageObject(String en, String vi) {
 		this.en = en;

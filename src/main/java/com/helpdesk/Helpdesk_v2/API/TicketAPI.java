@@ -137,6 +137,8 @@ public class TicketAPI {
 	@Transactional	
 	public ResponseEntity<TicketEntity> updateById(@PathVariable String id, @RequestBody TicketEntity ticketEntity)
 			throws Exception {
+		
+		System.out.println("Ticket status from client: " + ticketEntity.getStatus());
 
 		if (ticketService.findOne(id) != null) {
 			ticketEntity.setId(id);

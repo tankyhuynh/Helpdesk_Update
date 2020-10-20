@@ -11,20 +11,14 @@ public class FAQEntity {
 	@Id
 	private String id;
 
-	private MultiLanguageObject question;
-	private MultiLanguageObject answer;
+	private String question;
+	private String answer;
 
 	public FAQEntity() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public FAQEntity(MultiLanguageObject question, MultiLanguageObject answer) {
-		super();
-		this.question = question;
-		this.answer = answer;
-	}
 
-	public FAQEntity(String id, MultiLanguageObject question, MultiLanguageObject answer) {
+	public FAQEntity(String id, String question, String answer) {
 		super();
 		this.id = id;
 		this.question = question;
@@ -39,21 +33,22 @@ public class FAQEntity {
 		this.id = id;
 	}
 
-	public MultiLanguageObject getQuestion() {
+	public String getQuestion() {
 		return question;
 	}
 
-	public void setQuestion(MultiLanguageObject question) {
+	public void setQuestion(String question) {
 		this.question = question;
 	}
 
-	public MultiLanguageObject getAnswer() {
+	public String getAnswer() {
 		return answer;
 	}
 
-	public void setAnswer(MultiLanguageObject answer) {
+	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
+	
 	
 	
 	

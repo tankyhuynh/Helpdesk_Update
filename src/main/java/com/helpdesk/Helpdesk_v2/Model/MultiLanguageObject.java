@@ -10,44 +10,41 @@ package com.helpdesk.Helpdesk_v2.Model;
  */
 public class MultiLanguageObject {
 
-	private String eng;
-	private String vie;
+	private String en;
+	private String vi;
 	
 	public MultiLanguageObject() {
 		// TODO Auto-generated constructor stub
 	}
-
 	
-	
-	public MultiLanguageObject(String eng) {
-		this.eng = eng;
+	public MultiLanguageObject(String vi) {
+		this.vi = vi;
 	}
-	
-	
-	public MultiLanguageObject(String eng, String vie) {
+
+	public MultiLanguageObject(String en, String vi) {
 		super();
-		this.eng = eng;
-		this.vie = vie;
+		this.en = en;
+		this.vi = vi;
 	}
 
-
-
-
-	public String getEng() {
-		return eng;
+	public String getEn() {
+		return en;
 	}
 
-	public void setEng(String eng) {
-		this.eng = eng;
+	public void setEn(String en) {
+		this.en = en;
 	}
 
-	public String getVie() {
-		return vie;
+	public String getVi() {
+		return vi;
 	}
 
-	public void setVie(String vie) {
-		this.vie = vie;
+	public void setVi(String vi) {
+		this.vi = vi;
 	}
+
+	
+	
 	
 	
 	

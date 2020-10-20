@@ -9,12 +9,12 @@ package com.helpdesk.Helpdesk_v2.Model;
  *
  */
 public class MultiLanguageObject {
-
-	private String en;
+	
 	private String vi;
+	private String en;
 	
 	public MultiLanguageObject() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public MultiLanguageObject(String vi) {

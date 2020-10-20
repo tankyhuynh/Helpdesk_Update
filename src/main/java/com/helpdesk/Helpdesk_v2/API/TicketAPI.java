@@ -143,7 +143,7 @@ public class TicketAPI {
 			
 			if (ticketEntity.getTechnicianId() != null && !ticketEntity.getTechnicianId().isEmpty()) {
 					
-				if (ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().getEn().equals("Waiting")) {
+				if (ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Waiting")) {
 					MultiLanguageObject languageObject = new MultiLanguageObject("Assigned", "Đã phân công");
 					ticketEntity.setStatus(Arrays.asList(new StatusEntity(languageObject)));
 					System.out.println("Status == Waiting");

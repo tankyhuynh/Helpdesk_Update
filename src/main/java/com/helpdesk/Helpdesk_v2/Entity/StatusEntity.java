@@ -14,8 +14,9 @@ public class StatusEntity {
 		this.name = new MultiLanguageObject("Waiting", "Đang chờ");
 	}
 	
-	public StatusEntity(MultiLanguageObject name) {
-		this.name = name;
+	public StatusEntity(MultiLanguageObject object) {
+		this.name.setEn(object.getEn());
+		this.name.setVi(object.getVi());
 	}
 
 	public StatusEntity(MultiLanguageObject name, Date time) {

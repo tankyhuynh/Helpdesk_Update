@@ -143,7 +143,7 @@ public class TicketAPI {
 			
 			if (ticketEntity.getTechnicianId() != null && !ticketEntity.getTechnicianId().isEmpty()) {
 					
-				if (ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Waiting")) {
+				if (ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().getEn().equals("Waiting")) {
 					MultiLanguageObject languageObject = new MultiLanguageObject("Assigned", "Đã phân công");
 					languageObject.setEn("Assigned");
 					languageObject.setVi("Đã phân công");
@@ -152,13 +152,19 @@ public class TicketAPI {
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}
 				
-				else if(ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Closed") || ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Đã đóng")) {
+				else if(ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().getEn().equals("Closed") || ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Đã đóng")) {
 					ticketEntity.setEndDate(Calendar.getInstance().getTime());
 					mailAPI.sendUser_statusChange(ticketEntity.getUserId(), ticketEntity);
 					mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);
 				}
 				else {
-					System.out.println("Status != Waiting");}
+					MultiLanguageObject languageObject = new MultiLanguageObject("Assigned", "Đã phân công");
+					languageObject.setEn("Assigned");
+					languageObject.setVi("Đã phân công");
+					ticketEntity.setStatus(Arrays.asList(new StatusEntity(languageObject)));
+					System.out.println("Status != Waiting");
+					
+				}
 
 				mailAPI.sendUser_statusChange(ticketEntity.getUserId(), ticketEntity);
 				mailAPI.sendTechinician_statusChange(ticketEntity.getTechnicianId(), ticketEntity);

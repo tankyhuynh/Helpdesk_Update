@@ -15,8 +15,7 @@ public class StatusEntity {
 	}
 	
 	public StatusEntity(MultiLanguageObject object) {
-		this.name.setEn(object.getEn());
-		this.name.setVi(object.getVi());
+		this.name = name;
 	}
 
 	public StatusEntity(MultiLanguageObject name, Date time) {

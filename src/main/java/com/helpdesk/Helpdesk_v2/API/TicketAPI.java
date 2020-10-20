@@ -138,7 +138,10 @@ public class TicketAPI {
 	public ResponseEntity<TicketEntity> updateById(@PathVariable String id, @RequestBody TicketEntity ticketEntity)
 			throws Exception {
 		
-		System.out.println("Ticket status from client: " + ticketEntity.getStatus());
+		System.out.println("Ticket status from client: ");
+		for (StatusEntity item : ticketEntity.getStatus()) {
+			System.out.println(item.getName().getEn() + item.getName().getVi());
+		}
 
 		if (ticketService.findOne(id) != null) {
 			ticketEntity.setId(id);

@@ -112,7 +112,7 @@ public class TicketAPI {
 		status.add(new StatusEntity());
 		ticketEntity.setStatus(status);
 		
-		ticketEntity.setId((UUID.randomUUID().toString()));
+//		ticketEntity.setId((UUID.randomUUID().toString()));
 		mailAPI.sendUser_addTicket(ticketEntity.getUserId(), ticketEntity, mailConstant.mail_title_add_ticket_user, mailConstant.mail_body_add_ticket_user, mailConstant.mail_footer_add_ticket_user);
 		mailAPI.sendUser_addTicket("5f6ff6a57cbfb744d95344c8", ticketEntity, mailConstant.mail_title_add_ticket_user, mailConstant.mail_body_add_ticket_admin, mailConstant.mail_footer_add_ticket_admin);
 		

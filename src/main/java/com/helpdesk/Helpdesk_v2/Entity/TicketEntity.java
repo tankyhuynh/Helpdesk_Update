@@ -3,6 +3,7 @@ package com.helpdesk.Helpdesk_v2.Entity;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class TicketEntity {
 
 	@Id
-	private String id;
+	private String id = (UUID.randomUUID()).toString().substring(0, 8);
 	private String title;
 	private Date startDate;
 	private Date endDate;

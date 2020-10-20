@@ -1,4 +1,5 @@
 package com.helpdesk.Helpdesk_v2.Model;
+
 /**
 * @author root {8:29:42 AM}:
  * @version Creation time: Oct 20, 2020 8:29:42 AM
@@ -42,6 +43,16 @@ public class MultiLanguageObject {
 	public void setVi(String vi) {
 		this.vi = vi;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 	

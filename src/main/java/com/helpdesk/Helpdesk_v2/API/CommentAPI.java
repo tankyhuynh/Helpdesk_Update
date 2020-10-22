@@ -55,6 +55,13 @@ public class CommentAPI {
 		return commentService.findAll();
 	}
 	
+	@GetMapping("/ticket/{id}")
+	public List<CommentEntity> getAllByTicketId(@PathVariable String id) {
+		return commentService.findAllByTicketId(id);
+	}
+	
+	
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<CommentEntity> getOneById(@PathVariable String id) {
 		return ResponseEntity.ok(commentService.findOneById(id));
@@ -104,7 +111,7 @@ public class CommentAPI {
 		
 		
 
-		return ResponseEntity.ok(commentService.findAll());
+		return ResponseEntity.ok(commentService.findAllByTicketId(id));
 	}
 	
 	

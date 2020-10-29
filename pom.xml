@@ -43,7 +43,6 @@
 
 
 
-
 		<!-- Cloudinary -->
 		<dependency>
 			<groupId>com.cloudinary</groupId>

@@ -1,7 +1,6 @@
 package com.helpdesk.Helpdesk_v2.API;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
@@ -80,6 +79,9 @@ public class CommentAPI {
 	}
 	 
 	
+	
+
+	
 	@PutMapping("/ticket/{id}")
 	@Transactional
 	public ResponseEntity<List<CommentEntity>> commment(@PathVariable String id, @RequestBody CommentEntity commentEntity) {
@@ -87,8 +89,7 @@ public class CommentAPI {
 		commentEntity.setTime(Calendar.getInstance().getTime());
 		
 		commentEntity.setId(UUID.randomUUID().toString());
-		ticketEntity.getComment().add(commentEntity.getId());
-			
+		ticketEntity.getComment().add(commentEntity.getId());	
 		
 		commentEntity.setTicketId(id);
 		ticketService.save(ticketEntity);
@@ -107,8 +108,9 @@ public class CommentAPI {
 		mailAPI.send_updateTicket(strings);
 		
 		
-		ticketService.save(ticketEntity);
 		
+		ticketService.save(ticketEntity);
+	
 		
 
 		return ResponseEntity.ok(commentService.findAllByTicketId(id));

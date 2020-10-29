@@ -101,11 +101,12 @@ public class TicketAPI {
 
 		List<String> URL = new ArrayList<String>();
 
-		for (String item : ticketEntity.getImages()) {
-			URL.add(fileUtils.decoder(item, "outputFile"));
-
-		}
-		ticketEntity.setImages(URL);
+//		for (String item : ticketEntity.getImages()) {
+//			URL.add(fileUtils.decoder(item, "outputFile"));
+//
+//		}
+		
+//		ticketEntity.setImages(URL);
 
 		ticketEntity.setStartDate(new Date(System.currentTimeMillis()));
 		List<StatusEntity> status = new ArrayList<StatusEntity>();	
@@ -179,6 +180,13 @@ public class TicketAPI {
 		}
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
+	
+	
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable("id") String id) {
+		ticketService.delete(id);
+	}
+	
 
 	@DeleteMapping("/{id}/{modifiedBy}")
 	public void deleteById(@PathVariable("id") String id, @PathVariable("modifiedBy") String modifiedBy) throws Exception {

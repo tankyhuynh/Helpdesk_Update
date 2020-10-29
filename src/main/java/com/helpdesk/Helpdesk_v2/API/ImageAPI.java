@@ -9,12 +9,16 @@ package com.helpdesk.Helpdesk_v2.API;
  *
  */
 
+import java.io.UnsupportedEncodingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.helpdesk.Helpdesk_v2.Model.ImageModel;
 import com.helpdesk.Helpdesk_v2.Utils.FileUtils;
 
 @RestController
@@ -24,9 +28,9 @@ public class ImageAPI {
 	@Autowired
 	private FileUtils fileUtils;
 	
-	@PostMapping
-	public String upload(@RequestBody String base64Image) {
-		return fileUtils.decoder(base64Image, "ImageAPI");
+	@PostMapping(consumes = MediaType.ALL_VALUE)
+	public String upload(@RequestBody ImageModel base64Image) throws Exception {
+		return fileUtils.decoder(base64Image.getImage(), "ImageAPI");
 	}
 	
 }

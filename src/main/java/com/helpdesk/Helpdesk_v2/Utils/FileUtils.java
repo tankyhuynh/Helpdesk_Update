@@ -62,6 +62,11 @@ public class FileUtils {
 	                    ObjectUtils.asMap("resource_type", "auto", "eager", Arrays.asList(
 	                            new Transformation().quality(30))) );
 	        String URL = map.getOrDefault("url", "null URL");  
+	        	
+	        for (String str : map.keySet()) {
+				System.out.println(str);
+			}
+	        
 			  return URL;
 		    
 		  } catch (FileNotFoundException e) {

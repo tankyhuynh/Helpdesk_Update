@@ -67,7 +67,7 @@ public class PDFUtils<T> {
 			document.add(para);
 			document.add(Chunk.NEWLINE);
 			
-			PdfPTable table = new PdfPTable(9);
+			PdfPTable table = new PdfPTable(8);
 			table.setWidthPercentage(100);
 			// Add PDF Table Header ->
 			Stream.of(fieldName).forEach(headerTitle -> {
@@ -114,15 +114,13 @@ public class PDFUtils<T> {
 				endDayCell.setBorderWidth(2);
 				table.addCell(endDayCell);
 
-//				HTMLWorker worker = new 
-				
-				PdfPCell descriptionCell = new PdfPCell(new Phrase(String.valueOf(ticket.getDescription()), font));
-				descriptionCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				descriptionCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				descriptionCell.setBorderWidth(2);
-				descriptionCell.setPaddingRight(6);
-				table.addCell(descriptionCell);
-				
+//				PdfPCell descriptionCell = new PdfPCell(new Phrase(String.valueOf(ticket.getDescription()), font));
+//				descriptionCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+//				descriptionCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+//				descriptionCell.setBorderWidth(2);
+//				descriptionCell.setPaddingRight(6);
+//				table.addCell(descriptionCell);
+//				
 				
 				
 				PdfPCell placeCell = new PdfPCell(new Phrase(String.valueOf(ticket.getPlace()), font));

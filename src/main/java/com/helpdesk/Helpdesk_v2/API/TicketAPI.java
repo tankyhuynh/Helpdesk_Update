@@ -98,12 +98,17 @@ public class TicketAPI {
 
 		List<String> URL = new ArrayList<String>();
 
-//		for (String item : ticketEntity.getImages()) {
-//			URL.add(fileUtils.decoder(item, "outputFile"));
-//
-//		}
-		
-//		ticketEntity.setImages(URL);
+		try {
+			
+			for (String item : ticketEntity.getImages()) {
+				URL.add(fileUtils.decoder(item, "outputFile"));
+
+			}
+			ticketEntity.setImages(URL);
+			
+		} catch (Exception e) {
+			System.out.println("Image call from web");
+		}
 
 		ticketEntity.setStartDate(new Date(System.currentTimeMillis()));
 		List<StatusEntity> status = new ArrayList<StatusEntity>();	

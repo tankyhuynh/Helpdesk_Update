@@ -23,6 +23,9 @@ import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
+import com.itextpdf.text.html.HtmlTags;
+import com.itextpdf.text.html.HtmlUtilities;
+import com.itextpdf.text.html.simpleparser.HTMLWorker;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -63,7 +66,7 @@ public class PDFUtils<T> {
 			para.setAlignment(Element.ALIGN_CENTER);
 			document.add(para);
 			document.add(Chunk.NEWLINE);
-
+			
 			PdfPTable table = new PdfPTable(9);
 			table.setWidthPercentage(100);
 			// Add PDF Table Header ->
@@ -111,6 +114,7 @@ public class PDFUtils<T> {
 				endDayCell.setBorderWidth(2);
 				table.addCell(endDayCell);
 
+//				HTMLWorker worker = new 
 				
 				PdfPCell descriptionCell = new PdfPCell(new Phrase(String.valueOf(ticket.getDescription()), font));
 				descriptionCell.setVerticalAlignment(Element.ALIGN_MIDDLE);

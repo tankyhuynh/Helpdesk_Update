@@ -169,6 +169,11 @@ public class TicketAPI {
 				
 			}
 			
+			if(ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().getEn().equals("Closed") || ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().equals("Đã đóng")) {
+				ticketEntity.setEndDate(Calendar.getInstance().getTime());
+				ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).setName(new MultiLanguageObject("Closed", "Đã đóng"));
+			}
+			
 			LogEntity logEntity = new LogEntity(userService.findOne(ticketEntity.getModifiedBy()).getFullName() + ticketConstant.update_status +  ticketEntity.getId() + " vào", "https://img.icons8.com/ios-filled/64/000000/information.png");
 			logService.save(logEntity);
 

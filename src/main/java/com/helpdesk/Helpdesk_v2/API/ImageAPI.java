@@ -9,8 +9,6 @@ package com.helpdesk.Helpdesk_v2.API;
  *
  */
 
-import java.io.UnsupportedEncodingException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,7 +27,8 @@ public class ImageAPI {
 	private FileUtils fileUtils;
 	
 	@PostMapping(consumes = MediaType.ALL_VALUE)
-	public String upload(@RequestBody ImageModel base64Image) throws Exception {
+	public String upload(@RequestBody ImageModel base64Image){
+		System.out.println("In Image API");
 		return fileUtils.decoder(base64Image.getImage(), "ImageAPI");
 	}
 	

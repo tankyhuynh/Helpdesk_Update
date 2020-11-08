@@ -1,6 +1,5 @@
 package com.helpdesk.Helpdesk_v2.Entity;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;

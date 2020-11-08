@@ -1,5 +1,6 @@
 package com.helpdesk.Helpdesk_v2.Utils;
 
+import java.awt.Color;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -55,7 +56,10 @@ public class PDFUtils<T> {
 			// Add Text to PDF file ->
 			BaseFont bf = BaseFont.createFont(fontFile.getAbsolutePath(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
 	        Font font = new Font(bf,15);
-			Paragraph para = new Paragraph("Customer Table", font);
+	        Font titleFont = new Font(bf,25);
+	        titleFont.setColor(BaseColor.RED);
+	        titleFont.setStyle(titleFont.BOLD);
+			Paragraph para = new Paragraph("Bảng các yêu cầu", titleFont);
 			para.setAlignment(Element.ALIGN_CENTER);
 			document.add(para);
 			document.add(Chunk.NEWLINE);
@@ -65,11 +69,13 @@ public class PDFUtils<T> {
 			// Add PDF Table Header ->
 			Stream.of(fieldName).forEach(headerTitle -> {
 				PdfPCell header = new PdfPCell();
-				Font headFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
+				Font headerFont = new Font(bf,15);
+				headerFont.setStyle(headerFont.BOLD);
 				header.setBackgroundColor(BaseColor.LIGHT_GRAY);
-				header.setHorizontalAlignment(Element.ALIGN_CENTER);
 				header.setBorderWidth(2);
-				header.setPhrase(new Phrase(headerTitle, headFont));
+				header.setPadding(5);
+				header.setHorizontalAlignment(Element.ALIGN_CENTER);
+				header.setPhrase(new Phrase(headerTitle, headerFont));
 				table.addCell(header);
 			});
 
@@ -133,7 +139,7 @@ public class PDFUtils<T> {
 				
 				String status = "";
 				for (StatusEntity item : ticket.getStatus()) {
-					status += item.getName() + " " + (new SimpleDateFormat("dd-MM-yyyy").format(item.getTime())) + "\n\n";
+					status += item.getName().getVi() + " " + (new SimpleDateFormat("dd-MM-yyyy").format(item.getTime())) + "\n\n";
 				}
 				
 				PdfPCell statusCell = new PdfPCell(new Phrase(String.valueOf( status ), font));

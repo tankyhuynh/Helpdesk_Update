@@ -1,0 +1,332 @@
+[
+  {
+    "id": "1",
+    "question": {
+      "vi": "Máy tính của tôi không bật lên, tôi phải làm gì bây giờ? (Câu hỏi mới)",
+      "en": "My computer does not turn on, what do I do now? (New question)"
+    },
+    "answer": {
+      "vi": "Đầu tiên hãy kiểm tra dây nguồn của máy tính để đảm bảo rằng nó đã được cắm hoàn toàn vào ổ cắm trên tường. Nếu bạn đang sử dụng dải phích cắm, hãy đảm bảo rằng nó đã được cắm hoàn toàn vào ổ cắm trên tường và công tắc nguồn trên dải phích cắm đã được bật. Một số dải phích cắm cũng có bộ ngắt mạch tích hợp thường trông giống như một nút màu đen hoặc đỏ gần công tắc nguồn. Nhấn nút để đặt lại và xem liệu điều đó có giải quyết được vấn đề hay không.",
+      "en": "First check the computer's power cord to make sure it is completely plugged into the wall socket. If you are using a plug strip, make sure it is completely plugged into the wall socket and that the power switch on the plug strip is turned on. Some plug strips also have a built in circuit breaker which usually looks like a black or red button near the power switch. Press the button to reset it and see if that solves the problem."
+    }
+  },
+  {
+    "id": "2",
+    "question": {
+      "vi": "Tôi phải làm gì khi máy tính của tôi bị treo?",
+      "en": "What do I do when my computer crashes?"
+    },
+    "answer": {
+      "vi": "Có nhiều lý do khiến máy tính có thể ngừng hoạt động hoặc 'đóng băng'. Phần lớn thời gian chúng ta không thể làm được gì nhiều, thực tế cuộc sống là các chương trình máy tính đã trở nên phức tạp đến mức đôi khi người dùng sẽ gặp sự cố ngay cả khi thực hiện các tác vụ thông thường. Khi máy tính của bạn không còn phản hồi các lệnh bàn phím, cách tốt nhất của bạn là khởi động lại máy tính.",
+      "en": "There are many reasons why a computer may just stop working or 'freeze'. Most of the time there isn not much we can do about it, it is a fact of life that computer programs have become so complex that occasionally users will experience problems even when performing common tasks. When your computer no longer responds to keyboard commands your best bet is to restart the computer."
+    }
+  },
+  {
+    "id": "3",
+    "question": {
+      "vi": "Tôi phải làm gì nếu đĩa cứng của tôi không hoạt động?",
+      "en": "What do I do if my hard disk fails to work?"
+    },
+    "answer": {
+      "vi": "Như với hầu hết các lỗi máy tính, bước đầu tiên của bạn là tắt máy tính và khởi động lại. Điều này sẽ giúp bạn xác định xem bạn có thực sự gặp sự cố đĩa cứng hay không. Nếu đĩa bị hỏng nặng thì máy tính của bạn có thể sẽ không khởi động lại đúng cách. Nếu đúng như vậy thì hãy liên hệ với MCWare IT Solutions, đây là công việc dành cho các chuyên gia.",
+      "en": "As with most computer errors, your first step is to shut down your computer and restart it. This will help you determine whether or not you actually have a hard disk problem. If the disk is severely damaged then your computer will probably fail to restart properly. If this is the case then contact MCWare IT Solutions, this is a job for the professionals."
+    }
+  },
+  {
+    "id": "4",
+    "question": {
+      "vi": "Màn hình không hiển thị, tôi phải làm gì bây giờ?",
+      "en": "There is no display on the monitor, what do I do now?"
+    },
+    "answer": {
+      "vi": "Đảm bảo rằng màn hình đang bật. Nếu không thấy đèn nguồn (đèn xanh hoặc đèn cam) trên màn hình, hãy thử nhấn nút nguồn cho đến khi đèn bật sáng. Nếu màn hình máy tính của bạn đang bật và bạn bước ra khỏi máy tính và khi quay lại màn hình có màu đen, thì có khả năng là máy tính đang ở chế độ ngủ. Hãy thử di chuyển chuột, nhấp vào các nút chuột và / hoặc nhấn bất kỳ phím nào (phím cách) trên bàn phím để đánh thức bàn phím. Đảm bảo rằng màn hình được kết nối đúng cách với mặt sau của máy tính.",
+      "en": "Make sure the monitor is on. If no power light (green or orange light) is seen on the monitor display try pressing the power button until it comes on. If your computer monitor was on and you stepped away from the computer and upon returning it was black, it's likely that the computer is asleep. Try moving your mouse, clicking the mouse buttons, and/or pressing any key (space bar) on the keyboard to wake it up. Make sure that the monitor is connected properly to the back of the computer."
+    }
+  },
+  {
+    "id": "5",
+    "question": {
+      "vi": "Tôi phải làm gì nếu hình ảnh trên màn hình của tôi bị méo hoặc lệch?",
+      "en": "What do I do if the image on my monitor is distorted or skewed?"
+    },
+    "answer": {
+      "vi": "Bạn có thể nhận được hình ảnh bị méo khi cáp bị lỏng hoặc bị lỗi. Ngắt kết nối cáp video từ phía sau máy tính và xác minh rằng không có chân cắm nào bị cong, cháy hoặc gãy. Sau khi xác minh, hãy kết nối lại cáp màn hình. Nếu tốc độ làm tươi không được đặt đúng cách, màn hình có thể bị gợn sóng hoặc xuất hiện các đường thẳng đi xuống hoặc trên màn hình chậm hoặc nhanh, điều này cũng có thể gây ra hiện tượng nhấp nháy. Hình ảnh bị méo có thể do từ trường hoặc các loại nhiễu khác. Xác minh không có loa, quạt hoặc các thiết bị từ tính khác gần màn hình.",
+      "en": "You may receive a distorted image when the cable is loose or defective. Disconnect the video cable going from the back of the computer and verify that no pins are bent, burnt or broken. Once verified re-connect the monitor cable. If the refresh rate is not properly set the monitor may have a wavy or an appearance that lines are going down or across the monitor slowly or fast, this may also cause a flickering affect. A distorted image can be caused by magnetic or other types of interference. Verify no speakers, fans or other magnetic devices are close to the monitor."
+    }
+  },
+  {
+    "id": "6",
+    "question": {
+      "vi": "Tôi nhận được thông báo 'không có tín hiệu đầu vào' trên màn hình của mình, tôi phải làm gì?",
+      "en": "I get a 'no signal input' message on my monitor, what do I do?"
+    },
+    "answer": {
+      "vi": "Xác minh rằng màn hình được kết nối đúng cách ở mặt sau của màn hình cũng như mặt sau của máy tính. Nếu màn hình dường như được kết nối đúng cách, hãy xác minh rằng cáp không bị lỏng bằng cách ngắt kết nối tất cả các cáp có thể ngắt kết nối ở phía sau màn hình (thông thường không thể ngắt kết nối cáp dữ liệu). Tiếp theo, ngắt kết nối cáp dữ liệu được kết nối với mặt sau của máy tính và sau đó kết nối lại cáp. Khi kết nối cáp ở phía sau máy tính, hãy đảm bảo kết nối cáp chặt chẽ. Hầu hết các Máy tính cũng sẽ có các đầu vít có thể vặn vào để giữ đầu nối tại chỗ.",
+      "en": "Verify that the monitor is properly connected in the back of the monitor as well as to the back of the computer. If the monitor appears to be connected properly, verify that a cable is not loose by disconnecting all cables that can be disconnected in the back of the monitor (generally the data cable cannot be disconnected). Next, disconnect the data cable connected to the back of the computer and then reconnect the cable. When connecting the cable in the back of the computer ensure the cable connection is tight. Most Computers will also have screw ends that can be screwed in to hold the connector in place."
+    }
+  },
+  {
+    "id": "7",
+    "question": {
+      "vi": "Có viền đen trên màn hình của tôi, tôi phải làm gì?",
+      "en": "There are black borders on my monitors screen, what do I do?"
+    },
+    "answer": {
+      "vi": "Nếu độ phân giải được thay đổi gần đây, màn hình có thể không tự động điều chỉnh hoặc chuyển sang kích thước chính xác. Nếu điều này xảy ra, độ phân giải có thể được thay đổi trở lại cài đặt ban đầu hoặc bạn có thể điều chỉnh màn hình theo cách thủ công. Nếu viền đen tồn tại trên màn hình, nó thường có thể được giải quyết bằng cách điều chỉnh thủ công chiều ngang hoặc chiều dọc. Vì mỗi màn hình khác nhau nên phương pháp điều chỉnh cài đặt này sẽ khác nhau; tham khảo tài liệu màn hình của bạn.",
+      "en": "If the resolution was recently changed it is possible for the monitor to not auto adjust or shift to the correct size. If this occurs, the resolution can be changed back to the original setting or you can manually adjust the monitor. If a black border exists on the monitor it can generally be resolved by manually adjusting the horizontal or vertical width. Because each monitor is different, the method of adjusting this setting will vary; consult your monitor documentation."
+    }
+  },
+  {
+    "id": "8",
+    "question": {
+      "vi": "Tại sao chuột máy tính của tôi hoạt động thất thường?",
+      "en": "Why is my computer mouse acting erratically?"
+    },
+    "answer": {
+      "vi": "Người dùng có chuột cơ quang học (loại chuột phổ biến nhất dành cho máy tính để bàn) có thể gặp phải tình trạng thất thường do chuột không sạch hoặc bị bẩn. Nếu bạn đã vệ sinh chuột và tiếp tục gặp sự cố và con chuột này đã hoạt động tốt trong quá khứ thì rất tiếc chuột của bạn có thể bị lỗi. Một thử nghiệm bổ sung có thể được thực hiện để giúp xác định xem có phải trường hợp này hay không là kết nối chuột với máy tính khác. Nếu không, chúng tôi khuyên bạn nên thay thế chuột.",
+      "en": "Users who have an optical mechanical mouse (most common mouse for desktop computers) are likely experiencing erratic behaviour because the mouse is not clean or is dirty. If you've cleaned the mouse and continue to encounter issues and this mouse has worked in the past fine unfortunately your mouse is likely defective. One additional test that can be done to help determine if this is the case or not is to connect the mouse to another computer. Otherwise we suggest replacing the mouse."
+    }
+  },
+  {
+    "id": "9",
+    "question": {
+      "vi": "Con lăn chuột của tôi không hoạt động bình thường, tôi phải làm gì?",
+      "en": "The wheel on my mouse isn't working properly, what do I do?"
+    },
+    "answer": {
+      "vi": "Nếu bạn đang chạy bất kỳ phiên bản nào của Microsoft Windows và gặp sự cố với con lăn chuột, trước tiên hãy thử điều chỉnh cài đặt chuột thông qua cửa sổ Mouse Properties. Cửa sổ này có thể được truy cập bằng cách mở Control Panel và nhấp đúp vào biểu tượng Mouse.",
+      "en": "If you're running any version of Microsoft Windows and are encountering issues with the mouse wheel, first attempt to adjust the mouse settings through the Mouse Properties window. This window can be accessed by opening the Control Panel and double-clicking the Mouse icon."
+    }
+  },
+  {
+    "id": "10",
+    "question": {
+      "vi": "Làm cách nào để làm sạch bàn phím?",
+      "en": "How can I clean my keyboard?"
+    },
+    "answer": {
+      "vi": "Các phím trên bàn phím chỉ được cắt ra, bằng dao hoặc vật mỏng khác, cẩn thận mở các phím ra, điều này sẽ cho phép bạn làm sạch bên dưới các phím cũng như tự làm sạch các phím (đảm bảo bạn nhớ chúng đã đi đâu!) .",
+      "en": "The keys on a keyboard are only clipped on, with a knife or other thin object, carefully pop the keys off, this will allow you to clean under the keys as well as cleaning the keys themselves (make sure you remember where they went!)."
+    }
+  },
+  {
+    "id": "11",
+    "question": {
+      "vi": "Làm cách nào để vào chế độ an toàn cho máy tính của tôi?",
+      "en": "How do I get into my computers safe mode?"
+    },
+    "answer": {
+      "vi": "Để vào chế độ An toàn của Windows 7/10, khi máy tính đang khởi động, hãy nhấn và giữ 'Phím F8' của bạn, phím này sẽ hiển thị 'Trình đơn Tùy chọn Nâng cao của Windows'. Sử dụng các phím mũi tên để chuyển sang 'Chế độ An toàn' và nhấn phím Enter.",
+      "en": "To get into the Windows 7 / 10 Safe mode, as the computer is starting up press and hold your 'F8 Key' which should bring up the 'Windows Advanced Options Menu'. Use your arrow keys to move to 'Safe Mode' and press your Enter key."
+    }
+  },
+  {
+    "id": "12",
+    "question": {
+      "vi": "Tôi không thể xóa tệp vì tệp đó đang được Windows sử dụng, tôi phải làm gì?",
+      "en": "I can't delete a file because it is being used by Windows, what do I do?"
+    },
+    "answer": {
+      "vi": "Đóng tất cả các chương trình đang chạy trên máy tính và thử lại. Nếu sau khi đóng tất cả các chương trình đang chạy trên máy tính, bạn vẫn gặp phải sự cố tương tự khi cố gắng xóa tệp, hãy tải máy tính vào Chế độ an toàn và xóa tệp.",
+      "en": "Close all programs running on the computer and try again. If after closing all programs running on the computer you are still encountering the same issue when attempting to delete files, load the computer into Safe Mode and delete the files."
+    }
+  },
+  {
+    "id": "13",
+    "question": {
+      "vi": "Làm cách nào để cập nhật máy tính Microsoft Windows của tôi?",
+      "en": "How can I update my Microsoft Windows computer?"
+    },
+    "answer": {
+      "vi": "Nếu bạn đang chạy Microsoft Windows 7, Windows 10 hoặc phiên bản mới hơn của Microsoft Windows, bạn đủ điều kiện để cập nhật Microsoft Windows và trong một số trường hợp, phần cứng máy tính của bạn có trình điều khiển mới nhất thông qua trang web cập nhật của Microsoft, hãy truy cập http: // windowsupdate .microsoft.com. Trong hầu hết các trường hợp, máy tính của bạn phải được đặt thành tự động cập nhật khi có bản cập nhật mới.",
+      "en": "If you are running Microsoft Windows 7, Windows 10, or a later version of Microsoft Windows, you are eligible to update Microsoft Windows, and in some cases, your computer hardware with the latest drivers through Microsoft's update site, visit http://windowsupdate.microsoft.com. In most cases your computer should be set to automatically update when a new update becomes available."
+    }
+  },
+  {
+    "id": "14",
+    "question": {
+      "vi": "Có an toàn để tắt máy tính Windows mà không 'shut down' không?",
+      "en": "Is it safe to turn off a Windows computer without doing a shut down?"
+    },
+    "answer": {
+      "vi": "Người dùng không chỉ nên cần nhấn nút nguồn hoặc khởi động lại máy tính trong khi Windows vẫn đang chạy trừ khi có sự cố với máy tính. Microsoft đã bao gồm tính năng tắt vì nó cho phép máy tính thực hiện tất cả các bước cần thiết được yêu cầu trước khi tắt máy tính. Trên thực tế, nhiều phiên bản Microsoft Windows sẽ kiểm tra máy tính xem có vấn đề gì không nếu máy tính không được tắt đúng cách.",
+      "en": "Users should not simply press the power button or restart the computer while Windows is still running unless there is an issue with the computer. Microsoft has included the shut down feature because it enables a computer to go through all the necessary steps that are required before turning off the computer. In fact many versions of Microsoft Windows will check the computer for any problems if the computer is not shut down properly."
+    }
+  },
+  {
+    "id": "15",
+    "question": {
+      "vi": "Làm cách nào để khôi phục tệp từ thùng rác?",
+      "en": "How can I recover a file from the recycle bin?"
+    },
+    "answer": {
+      "vi": "Nhấp đúp vào biểu tượng thùng rác trên màn hình của bạn, tại đây bạn sẽ thấy tất cả các tệp trong thùng của mình. Chọn các tệp bạn muốn khôi phục, nhấp chuột phải và chọn khôi phục.",
+      "en": "Double click the recycle bin icon on your desktop, here you will see all of the files within your bin. Select the files you wish to recover, right click and choose restore."
+    }
+  },
+  {
+    "id": "16",
+    "question": {
+      "vi": "Tôi không thể gửi hoặc nhận email?",
+      "en": "I am unable to send or receive email?"
+    },
+    "answer": {
+      "vi": "Xác minh rằng máy tính của bạn có thể xem Internet và / hoặc các máy tính khác để đảm bảo rằng máy tính của bạn không gặp phải sự cố kết nối, điều này có thể gây ra sự cố e-mail của bạn. Đảm bảo rằng máy chủ e-mail Internet hoặc máy chủ e-mail trong Mạng của bạn không gặp sự cố bằng cách liên hệ với Nhà cung cấp dịch vụ Internet hoặc quản trị viên Mạng của bạn.",
+      "en": "Verify that your computer is able to see the Internet and/or other computers to ensure that your computer is not encountering a connection issue, which would be causing your e-mail issue. Ensure that your Internet e-mail server or your Network e-mail server is not encountering issues by contacting either your Internet Service Provider or your Network administrator."
+    }
+  },
+  {
+    "id": "17",
+    "question": {
+      "vi": "Tôi không thể nhận được bất kỳ tệp đính kèm email nào?",
+      "en": "I can't receive any email attachments?"
+    },
+    "answer": {
+      "vi": "Nếu hộp e-mail chứa đầy các e-mail khác và / hoặc dung lượng lưu trữ của bạn chỉ có vài megabyte, thì có thể không nhận được tệp đính kèm đang được gửi. Thông thường, nếu sự cố này xảy ra, người gửi e-mail sẽ nhận được phản hồi từ máy chủ e-mail của bạn cho biết rằng hộp thư của bạn đã đầy và / hoặc đã vượt quá kích thước được phân bổ. Vì vi rút máy tính và phần mềm độc hại khác được phân phối tốt nhất qua e-mail, nhiều nhà cung cấp dịch vụ e-mail, công ty và chương trình e-mail ngăn một số loại phần mở rộng tệp nhất định được phân phối hoặc nhận qua e-mail. Ví dụ: Microsoft Outlook bảo vệ người dùng của mình bằng cách tự động tắt nhận một số loại phần mở rộng tệp nhất định trong e-mail.",
+      "en": "If the e-mail box is full of other e-mail messages, and/or your storage space is only a few megabytes, it's possible that the attachment being sent cannot be received. Often if this problem is occurring the person sending the e-mail should get a response back from your e-mail server indicating that your mailbox is full and/or has exceeded its allocated size. Because computer viruses and other malware are best distributed through e-mail, many e-mail service providers, companies, and e-mail programs prevent certain types of file extensions from being distributed or received through e-mail. For example, Microsoft Outlook protect its users by automatically disabling certain file extension types from being received in e-mail."
+    }
+  },
+  {
+    "id": "18",
+    "question": {
+      "vi": "Có cho phép khoảng trắng trong địa chỉ email không?",
+      "en": "Are spaces allowed in email addresses?"
+    },
+    "answer": {
+      "vi": "Giống như một URL Internet, không có khoảng trắng nào được phép trong một địa chỉ e-mail. Tuy nhiên, tên có thể được chia nhỏ bằng cách sử dụng một dấu chấm; ví dụ: John Smith có thể có địa chỉ e-mail: john.smith@example.com hoặc john.s@example.com vì địa chỉ e-mail không được phép có khoảng trắng.",
+      "en": "Just like an Internet URL no spaces are allowed in an e-mail address. However, names can be broken up using a period; for example, John Smith may have an e-mail address: john.smith@example.com or john.s@example.com because no spaces are allowed in the e-mail address."
+    }
+  },
+  {
+    "id": "19",
+    "question": {
+      "vi": "Máy in của tôi đang in các trang bị nhòe / méo, tôi có thể làm gì?",
+      "en": "My printer is printing smudged/distorted pages, what can I do?"
+    },
+    "answer": {
+      "vi": "Khi in trên giấy không truyền thống, máy in của bạn có thể bị nhòe, văn bản không đều hoặc bị cong và / hoặc văn bản chảy ra khỏi các cạnh của giấy. Máy in của bạn có thể đang in mờ, nhòe và / hoặc văn bản mờ nhạt khác do đầu in bẩn. Tất cả các máy in hiện đại đều có một số loại chế độ vệ sinh máy in, tự kiểm tra và / hoặc chẩn đoán có thể được thực hiện để kiểm tra và làm sạch đầu in của máy in và các thiết bị bên trong khác được sử dụng để in.",
+      "en": "When printing on untraditional paper your printer may experience smudges, un-even or crooked text, and/or text that runs off the edges of the paper. Your printer may be printing fuzzy, blurry, and/or other faint text because of dirty print heads. All modern printers have some type of printer cleaning, self-test, and/or diagnose mode that can be performed to check and clean the printers print heads and other internal equipment used to print."
+    }
+  },
+  {
+    "id": "20",
+    "question": {
+      "vi": "Màn hình không hiển thị, tôi phải làm gì bây giờ?",
+      "en": "There is no display on the monitor, what do I do now?"
+    },
+    "answer": {
+      "vi": "Đảm bảo rằng màn hình đang bật. Nếu không thấy đèn nguồn (đèn xanh hoặc đèn cam) trên màn hình, hãy thử nhấn nút nguồn cho đến khi đèn bật sáng. Nếu màn hình máy tính của bạn đang bật và bạn bước ra khỏi máy tính và khi quay lại màn hình có màu đen, thì có khả năng là máy tính đang ở chế độ ngủ. Hãy thử di chuyển chuột, nhấp vào các nút chuột và / hoặc nhấn bất kỳ phím nào (phím cách) trên bàn phím để đánh thức bàn phím. Đảm bảo rằng màn hình được kết nối đúng cách với mặt sau của máy tính.",
+      "en": "Make sure the monitor is on. If no power light (green or orange light) is seen on the monitor display try pressing the power button until it comes on. If your computer monitor was on and you stepped away from the computer and upon returning it was black, it's likely that the computer is asleep. Try moving your mouse, clicking the mouse buttons, and/or pressing any key (space bar) on the keyboard to wake it up. Make sure that the monitor is connected properly to the back of the computer."
+    }
+  },
+  {
+    "id": "21",
+    "question": {
+      "vi": "Làm cách nào để khắc phục tình trạng kẹt giấy?",
+      "en": "How do I fix a paper jam?"
+    },
+    "answer": {
+      "vi": "Tắt máy in. Kiểm tra vị trí hoặc khay mà giấy in sẽ đẩy ra. Nếu có thể nhìn thấy giấy bị kẹt, hãy tháo nó ra theo cách thủ công. Tháo tất cả các khay giấy và bất kỳ giấy nào có thể bị kẹt giữa khay và máy in. Nếu có thể nhìn thấy giấy bị kẹt, hãy tháo nó ra theo cách thủ công. Mở cửa máy in cho phép bạn truy cập vào hộp mực máy in hoặc mực in và tìm bất kỳ giấy bị kẹt nào. Nếu có thể nhìn thấy giấy bị kẹt, hãy tháo nó ra theo cách thủ công. Bật lại máy in.",
+      "en": "Turn off the printer. Inspect the location or tray the printed paper ejects to. If the stuck paper is visible manually remove it. Remove all paper trays and any paper that may be stuck between the tray and the printer. If the stuck paper is visible manually remove it. Open the printer door that allows you access to the printer ink cartridges or toner and look for any stuck paper. If the stuck paper is visible manually remove it. Turn the printer back on."
+    }
+  },
+  {
+    "id": "22",
+    "question": {
+      "vi": "Tôi bị mất đĩa cài đặt máy in, làm cách nào để cài đặt máy in?",
+      "en": "I lost my printer installation disk, how can I install my printer?"
+    },
+    "answer": {
+      "vi": "Rất may, đĩa cài đặt máy in bị thiếu không phải là ngày tận thế và sẽ không yêu cầu bạn đợi cho đến khi một đĩa mới có thể được gửi cho bạn. Ngày nay, tất cả các nhà sản xuất máy in và phần cứng khác đang cung cấp các bản tải xuống trên Internet các chương trình phần mềm và trình điều khiển đi kèm với sản phẩm của họ.",
+      "en": "Thankfully a missing printer installation disk is not the end of the world and will not require you to wait until a new disk can be sent to you. Today all printer and other hardware manufacturers are providing downloads on the Internet to their software programs and drivers that are included with their products."
+    }
+  },
+  {
+    "id": "23",
+    "question": {
+      "vi": "Tôi không thể kết nối với ổ đĩa mạng của mình nữa, tôi có thể làm gì?",
+      "en": "I can't connect to my network drive anymore, what can I do?"
+    },
+    "answer": {
+      "vi": "Xác minh rằng cáp mạng được kết nối đúng cách với mặt sau của máy tính. Ngoài ra, khi kiểm tra kết nối của cáp mạng, hãy đảm bảo rằng đèn LED trên mạng được chiếu sáng thích hợp. Ví dụ, một card mạng có đèn LED hoặc đèn màu xanh lục đặc thường cho biết rằng card đã được kết nối hoặc đang nhận tín hiệu. Lưu ý: nói chung, khi đèn xanh nhấp nháy, đây là dấu hiệu của dữ liệu được gửi hoặc nhận.",
+      "en": "Verify that the network cable is properly connected to the back of the computer. In addition, when checking the connection of the network cable, ensure that the LED's on the network are properly illuminated. For example, a network card with a solid green LED or light usually indicates that the card is either connected or receiving a signal. Note: generally, when the green light is flashing, this is an indication of data being sent or received."
+    }
+  },
+  {
+    "id": "24",
+    "question": {
+      "vi": "Làm cách nào để ánh xạ ổ đĩa mạng?",
+      "en": "How do I map a network drive?"
+    },
+    "answer": {
+      "vi": "Mở Microsoft Explorer. Từ Explorer, nhấp vào trình đơn thả xuống Công cụ và nhấp vào tùy chọn 'Ổ đĩa mạng bản đồ.' Chỉ định ổ đĩa mạng hoặc máy tính mạng làm thư mục. Nếu tên của máy tính là Hope, để ánh xạ tới máy tính đó, hãy nhập \\ hope Nếu bạn muốn ánh xạ tới một thư mục được chia sẻ trên máy tính hope, chẳng hạn như thư mục mp3, bạn sẽ nhập hope mp3. Nếu tên người dùng hoặc thông tin đăng nhập khác được yêu cầu để kết nối với máy tính hoặc ổ đĩa này, nó phải được chỉ định trong cửa sổ này trước khi nhấp vào kết thúc.",
+      "en": "Open Microsoft Explorer. From Explorer, click the Tools drop down menu and click the option 'Map Network Drive.' Specify the network drive or network computer as the folder. If the computer's name was hope, to map to that computer, type \\hope If you wished to map to a shared folder on the hope computer such as a mp3 folder, you would type hope mp3. If a different username or login is required to connect to this computer or drive it must be specified in this window before clicking the finish."
+    }
+  },
+  {
+    "id": "25",
+    "question": {
+      "vi": "Làm cách nào để xác định tên máy tính của tôi?",
+      "en": "How do I determine my computer's name?"
+    },
+    "answer": {
+      "vi": "Bấm chuột phải vào Máy tính của tôi. Nhấp vào Thuộc tính. Trong cửa sổ Thuộc tính, bấm vào tab Tên Máy tính. Trong tab này, bạn sẽ có thể thấy tên máy tính đầy đủ, nhóm làm việc và cả mô tả. Nếu bạn muốn thay đổi tên hoặc nhóm làm việc, hãy nhấp vào nút Thay đổi.",
+      "en": "Right-click My Computer. Click Properties. In the Properties window, click the Computer Name tab. Within this tab you'll be able to see the full computer name, workgroup and also a description. If you wish to change the name or workgroup, click the Change button."
+    }
+  },
+  {
+    "id": "26",
+    "question": {
+      "vi": "Virus máy tính là gì?",
+      "en": "What is a computer virus?"
+    },
+    "answer": {
+      "vi": "Virus máy tính là một chương trình phần mềm được cố ý tạo ra để gây ra sự đau buồn cho người dùng, lây lan sang các máy tính khác hoặc phá hủy dữ liệu trên máy tính của một cá nhân. Để giúp ngăn máy tính bị nhiễm vi-rút, các nhà phát triển phần mềm đã phát triển các chương trình chống vi-rút luôn hoạt động trên máy tính để giúp bảo vệ máy tính đó. Điều quan trọng cần nhận ra là nhiều máy tính không được cài đặt sẵn những chương trình này và nếu máy tính có những chương trình này, chương trình có thể hết hạn trong vòng 90 ngày.",
+      "en": "A computer virus is a software program that has been intentionally created to cause a user grief, spread to other computers, or destroy data on an individual's computer. To help prevent a computer from becoming infected by a virus, software developers have developed anti virus programs that stay active on the computer helping to protect it. It is important to realize that many computers do not come pre-loaded with these already installed and that if computers do come with these programs, the programs may expire within 90 days."
+    }
+  },
+  {
+    "id": "27",
+    "question": {
+      "vi": "Windows có đi kèm với chương trình bảo vệ chống vi-rút không?",
+      "en": "Does Windows come with a virus protection program?"
+    },
+    "answer": {
+      "vi": "Tất cả các phiên bản Microsoft Windows không được cài đặt sẵn chương trình bảo vệ chống vi-rút. Điều này bao gồm: Microsoft Windows 7 và Windows 10.",
+      "en": "All versions of Microsoft Windows do not come pre-installed with a virus protection program. This includes: Microsoft Windows 7 and Windows 10."
+    }
+  },
+  {
+    "id": "28",
+    "question": {
+      "vi": "Virus có thể làm hỏng phần cứng máy tính không?",
+      "en": "Can a virus damage computer hardware?"
+    },
+    "answer": {
+      "vi": "Không. Vi rút máy tính là mã phần mềm được thiết kế để lây lan vào các tệp máy tính và các máy tính khác, xóa tệp và gây ra các sự cố khác với dữ liệu trên máy tính. Vì vậy, nếu bạn đang gặp sự cố với thiết bị phần cứng như máy in, card màn hình, card âm thanh, v.v. thì đó không phải là do vi-rút.",
+      "en": "No. Computer viruses are software code designed to spread to computer files and other computers, delete files, and cause other problems with the data on the computer. So if you're experiencing an issue with a hardware device such as your printer, video card, sound card, etc. it is not due to a virus."
+    }
+  },
+  {
+    "id": "29",
+    "question": {
+      "vi": "Nếu tôi định dạng hoặc xóa ổ cứng của mình, nó có loại bỏ được vi-rút không?",
+      "en": "If I format or erase my hard drive will it remove a virus?"
+    },
+    "answer": {
+      "vi": "Nếu máy tính của bạn bị nhiễm vi-rút định dạng hoặc xóa ổ đĩa cứng và bắt đầu lại gần như luôn luôn loại bỏ được bất kỳ loại vi-rút nào. Tuy nhiên, hãy lưu ý nếu các bản sao lưu đã được thực hiện có chứa vi rút, phương tiện hoặc ổ đĩa khác được kết nối với máy tính có vi rút, máy tính của bạn được kết nối với một máy tính khác trên mạng có vi rút và / hoặc vi rút được lưu trữ trên một số loại phần mềm khác mà bạn sử dụng với máy tính, nó có thể bị nhiễm lại nếu không được bảo vệ đúng cách.",
+      "en": "If your computer is infected with a virus formatting or erasing the hard disk drive and starting over will almost always remove any type of virus. However, keep in mind if backups have been made that contain the virus, other media or drives connected to the computer have a virus, your computer is connected to another computer on a network with a virus, and/or the virus is stored on some other type of software you use with your computer it can become re-infected if not properly protected."
+    }
+  },
+  {
+    "id": "30",
+    "question": {
+      "vi": "Làm cách nào để xóa cookie Internet?",
+      "en": "How do I delete Internet cookies?"
+    },
+    "answer": {
+      "vi": "Người dùng Microsoft Internet Explorer có thể đi tới 'Công cụ' (hoặc biểu tượng bánh răng nhỏ ở trên cùng bên trái), sau đó đi tới 'An toàn' và chọn 'Xóa lịch sử duyệt web ...', sau đó bạn có thể chọn xóa cookie Internet của mình. Trong Google Chrome, đi tới 'Công cụ khác' và chọn 'Xóa dữ liệu duyệt web ...'. Người dùng Firefox có thể đi tới 'Lịch sử', sau đó chọn 'Xóa lịch sử gần đây ...'",
+      "en": "Microsoft Internet Explorer users can go to 'Tools' (or the little cog icon in the top left), then go to 'Safety' and choose 'Delete browsing history...', you can then choose to delete your Internet cookies. In Google Chrome, go to 'More Tools' and choose 'Clear browsing data...'. Firefox users can go to 'History', then choose 'Clear recent history...'"
+    }
+  }
+]

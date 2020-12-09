@@ -41,15 +41,13 @@ public class MailAPI {
 	private JavaMailSender mailSender;
 	
 
-	public void send_updateTicket(String[] emails) {
-		
-		
+	public void send_updateTicket(String[] emails, String titleOfTicket) {
 
 		SimpleMailMessage msg = new SimpleMailMessage();
 		msg.setTo(emails);
 
 		msg.setSubject("Alert Alert Alert !!!!!!!");
-		msg.setText("Have a new comment in ticket");
+		msg.setText("Have a new comment in ticket " + titleOfTicket);
 
 		javaMailSender.send(msg);
 
@@ -98,7 +96,7 @@ public class MailAPI {
 							+ "<br> Time: " + ticketEntity.getStartDate().toString() 
 							+ "<br> Title: " + ticketEntity.getTitle() 
 							+ "<br> Description: " + ticketEntity.getDescription()
-							+ "<br> Status: " + ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName() + " at " + ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getTime()
+							+ "<br> Status: " + ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getName().getEn() + " at " + ticketEntity.getStatus().get(ticketEntity.getStatus().size()-1).getTime()
 							+ "<br> Technician: " + ticketEntity.getTechnicianName();
 					
 		

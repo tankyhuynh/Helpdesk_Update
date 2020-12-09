@@ -38,103 +38,81 @@ public class CommentAPI {
 
 	@Autowired
 	private TicketService ticketService;
-	
+
 	@Autowired
 	private CommentService commentService;
-	
+
 	@Autowired
 	private MailAPI mailAPI;
-	
+
 	@Autowired
 	private UserService userService;
-	
-	
+
 	@GetMapping
 	public List<CommentEntity> getAll() {
 		return commentService.findAll();
 	}
-	
+
 	@GetMapping("/ticket/{id}")
 	public List<CommentEntity> getAllByTicketId(@PathVariable String id) {
 		return commentService.findAllByTicketId(id);
 	}
-	
-	
-	
+
 	@GetMapping("/{id}")
 	public ResponseEntity<CommentEntity> getOneById(@PathVariable String id) {
 		return ResponseEntity.ok(commentService.findOneById(id));
 	}
-	
+
 	@PostMapping
 	public CommentEntity save(@RequestBody CommentEntity commentEntity) {
 		return commentService.save(commentEntity);
 	}
-	
+
 	@PutMapping("/{id}")
 	public ResponseEntity<CommentEntity> update(@PathVariable String id, @RequestBody CommentEntity commentEntity) {
 		commentEntity.setId(id);
 
 		return ResponseEntity.ok(commentService.save(commentEntity));
 	}
-	 
-	
-	
 
-	
 	@PutMapping("/ticket/{id}")
 	@Transactional
-	public ResponseEntity<List<CommentEntity>> commment(@PathVariable String id, @RequestBody CommentEntity commentEntity) {
+	public ResponseEntity<List<CommentEntity>> commment(@PathVariable String id,
+			@RequestBody CommentEntity commentEntity) {
 		TicketEntity ticketEntity = ticketService.findOne(id);
 		commentEntity.setTime(Calendar.getInstance().getTime());
-		
+
 		commentEntity.setId(UUID.randomUUID().toString());
-		ticketEntity.getComment().add(commentEntity.getId());	
-		
+		ticketEntity.getComment().add(commentEntity.getId());
+
 		commentEntity.setTicketId(id);
 		ticketService.save(ticketEntity);
 		commentService.save(commentEntity);
-		
-	
+
 		List<String> emails = new ArrayList<String>();
 		for (CommentEntity commentId : commentService.findAllByTicketId(id)) {
 			if (!emails.contains(commentId.getUserId())) {
 				emails.add((userService.findOne(commentId.getUserId())).getEmail());
 			}
 		}
-	
+
 		String[] strings = emails.stream().toArray(String[]::new);
-		
-		mailAPI.send_updateTicket(strings);
-		
-		
-		
+
+		mailAPI.send_updateTicket(strings, ticketEntity.getTitle());
+
 		ticketService.save(ticketEntity);
-	
-		
 
 		return ResponseEntity.ok(commentService.findAllByTicketId(id));
 	}
-	
-	
 
-	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable String id) {
 		commentService.delete(id);
 	}
-	
-	
+
 	@DeleteMapping("/all")
 	public void deleteAll() {
 		commentService.deleteAll();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

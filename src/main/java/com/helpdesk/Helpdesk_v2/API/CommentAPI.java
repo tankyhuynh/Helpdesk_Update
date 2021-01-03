@@ -22,6 +22,7 @@ import com.helpdesk.Helpdesk_v2.Entity.TicketEntity;
 import com.helpdesk.Helpdesk_v2.Service.CommentService;
 import com.helpdesk.Helpdesk_v2.Service.TicketService;
 import com.helpdesk.Helpdesk_v2.Service.UserService;
+import com.helpdesk.Helpdesk_v2.Utils.MailUtils;
 
 /**
 * @author root {8:41:39 PM}:
@@ -43,7 +44,7 @@ public class CommentAPI {
 	private CommentService commentService;
 
 	@Autowired
-	private MailAPI mailAPI;
+	private MailUtils mailAPI;
 
 	@Autowired
 	private UserService userService;

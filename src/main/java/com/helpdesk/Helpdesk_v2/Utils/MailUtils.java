@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.helpdesk.Helpdesk_v2.API;
+package com.helpdesk.Helpdesk_v2.Utils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -18,6 +18,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -26,7 +27,7 @@ import com.helpdesk.Helpdesk_v2.Entity.TicketEntity;
 import com.helpdesk.Helpdesk_v2.Service.UserService;
 
 @Component
-public class MailAPI {
+public class MailUtils {
 
 	@Autowired
 	private JavaMailSender javaMailSender;
@@ -41,6 +42,7 @@ public class MailAPI {
 	private JavaMailSender mailSender;
 	
 
+	@Async
 	public void send_updateTicket(String[] emails, String titleOfTicket) {
 
 		SimpleMailMessage msg = new SimpleMailMessage();
@@ -54,6 +56,7 @@ public class MailAPI {
 	}
 	
 	
+	@Async
 	public void sendUser_addTicket(String userId,TicketEntity ticketEntity, String emailTitle, String emailBody, String emailFooter) {
 
 		String email = userService.findOne(userId).getEmail();
@@ -87,7 +90,7 @@ public class MailAPI {
 	}
 	
 	
-	
+	@Async
 	public void sendUser_statusChange(String userId, TicketEntity ticketEntity) {
 
 		String email = userService.findOne(userId).getEmail();
@@ -124,7 +127,7 @@ public class MailAPI {
 	
 	
 	
-	
+	@Async
 	public void sendTechinician_statusChange(String userId,TicketEntity ticketEntity) {
 
 		String email = userService.findOne(userId).getEmail();
@@ -159,7 +162,7 @@ public class MailAPI {
 	}
 	
 	
-	
+	@Async
 	public void sendAdmin_dropTicket(TicketEntity ticketEntity) {
 
 		MimeMessage mimeMessage = mailSender.createMimeMessage();

@@ -67,12 +67,7 @@ public class PdfAPI {
 
         String[] fieldName = {"Id", "Tiêu đề", "Ngày bắt đầu", "Ngày kết thúc", "Địa điểm", "Được gửi bởi", "Trạng thái", "Kỹ thuật viên"};
         ByteArrayInputStream bis = pdfTicket.customerPDFReport(fieldName ,ticketEntities);
-        
-        
-        
-        
 
-        
         
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Disposition", "inline; filename=customers.pdf");

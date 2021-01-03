@@ -32,6 +32,7 @@ import com.helpdesk.Helpdesk_v2.Service.LogService;
 import com.helpdesk.Helpdesk_v2.Service.TicketService;
 import com.helpdesk.Helpdesk_v2.Service.UserService;
 import com.helpdesk.Helpdesk_v2.Utils.FileUtils;
+import com.helpdesk.Helpdesk_v2.Utils.MailUtils;
 
 @RestController
 @RequestMapping("/v1/ticket")
@@ -47,7 +48,7 @@ public class TicketAPI {
 	private FileUtils fileUtils;
 	
 	@Autowired
-	private MailAPI mailAPI;
+	private MailUtils mailAPI;
 	
 	@Autowired
 	private MailConstant mailConstant;
